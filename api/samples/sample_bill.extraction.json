@@ -1,0 +1,118 @@
+{
+  "model": "gemini-3.5-flash",
+  "attempts": [
+    {
+      "model": "gemini-3.8-flash",
+      "ok": false,
+      "error": "ServerError 503"
+    },
+    {
+      "model": "gemini-3.6-flash",
+      "ok": false,
+      "error": "ServerError 504"
+    },
+    {
+      "model": "gemini-3.5-flash",
+      "ok": true,
+      "seconds": 37.84
+    }
+  ],
+  "needs_review": false,
+  "flags": [],
+  "document": {
+    "doc_type": "electricity_bill",
+    "supplier": "Sahyadri Power Distribution Ltd",
+    "invoice_number": "SPDL/2026/09/48812",
+    "invoice_date": "2026-10-05",
+    "period_start": "2026-09-01",
+    "period_end": "2026-09-30",
+    "currency": "INR",
+    "country": "IN",
+    "line_items": [
+      {
+        "description": "Energy consumed (Present 284,150 - Previous 259,650)",
+        "quantity": "24500",
+        "unit": "kWh",
+        "amount": "232750.00",
+        "category": "electricity",
+        "is_activity": true,
+        "fuel_or_material": null,
+        "origin": null,
+        "destination": null,
+        "weight_tonnes": null,
+        "distance_km": null,
+        "page": 1,
+        "box_2d": [
+          311,
+          93,
+          332,
+          881
+        ],
+        "confidence": 0.95
+      },
+      {
+        "description": "Fixed / demand charges (120 kVA)",
+        "quantity": "120",
+        "unit": "kVA",
+        "amount": "52800.00",
+        "category": "electricity",
+        "is_activity": false,
+        "fuel_or_material": null,
+        "origin": null,
+        "destination": null,
+        "weight_tonnes": null,
+        "distance_km": null,
+        "page": 1,
+        "box_2d": [
+          334,
+          93,
+          355,
+          881
+        ],
+        "confidence": 0.95
+      },
+      {
+        "description": "Electricity duty",
+        "quantity": null,
+        "unit": null,
+        "amount": "17456.25",
+        "category": "electricity",
+        "is_activity": false,
+        "fuel_or_material": null,
+        "origin": null,
+        "destination": null,
+        "weight_tonnes": null,
+        "distance_km": null,
+        "page": 1,
+        "box_2d": [
+          357,
+          94,
+          378,
+          881
+        ],
+        "confidence": 0.95
+      },
+      {
+        "description": "Fuel adjustment charge",
+        "quantity": "24500",
+        "unit": "kWh",
+        "amount": "8330.00",
+        "category": "electricity",
+        "is_activity": false,
+        "fuel_or_material": null,
+        "origin": null,
+        "destination": null,
+        "weight_tonnes": null,
+        "distance_km": null,
+        "page": 1,
+        "box_2d": [
+          380,
+          93,
+          401,
+          881
+        ],
+        "confidence": 0.95
+      }
+    ]
+  }
+}
