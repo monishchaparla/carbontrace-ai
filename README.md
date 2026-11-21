@@ -23,6 +23,7 @@ source document.
 ## Repository layout
 
 ```
+api/        Python engine: emission factors, calculation, tests
 web/        Next.js frontend
 DESIGN.md   Design system (colours, type, layout, components)
 ```
