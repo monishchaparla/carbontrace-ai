@@ -15,6 +15,8 @@ PDF = b"%PDF-1.4 fake test file"
 def client(tmp_path, monkeypatch):
     monkeypatch.setenv("CARBONTRACE_DB", str(tmp_path / "t.db"))
     monkeypatch.setenv("CARBONTRACE_UPLOADS", str(tmp_path / "up"))
+    monkeypatch.setenv("CARBONTRACE_API_KEY", "test-key")
+    monkeypatch.delenv("CARBONTRACE_DEV", raising=False)
     import carbontrace.api as api
     api = importlib.reload(api)
 
@@ -24,7 +26,16 @@ def client(tmp_path, monkeypatch):
         return PipelineResult(doc, [], lines, "fake")
 
     monkeypatch.setattr(api.pipeline, "process", fake_process)
-    return TestClient(api.app), api
+    return TestClient(api.app, headers={"x-api-key": "test-key"}), api
+
+
+def test_routes_need_api_key_except_health(client):
+    _, api = client
+    anon = TestClient(api.app)
+    assert anon.get("/health").status_code == 200
+    assert anon.get("/documents").status_code == 401
+    assert anon.get("/summary", headers={"x-api-key": "wrong"}).status_code == 401
+    assert anon.post("/documents", files={"file": ("bill.pdf", PDF, "application/pdf")}).status_code == 401
 
 
 def test_upload_process_and_summary(client):

@@ -22,6 +22,7 @@ class LineResult:
     method: str
     kg_co2e: Decimal | None
     trace: dict | None = None
+    shortlist: list[str] = field(default_factory=list)
 
 
 @dataclass
@@ -90,6 +91,7 @@ def run(extraction: Extraction, picker: Picker = gemini_picker) -> PipelineResul
             method=m.method,
             kg_co2e=kg,
             trace=trace,
+            shortlist=m.shortlist,
         ))
     return PipelineResult(doc, flags, lines, extraction.model, extraction.attempts)
 

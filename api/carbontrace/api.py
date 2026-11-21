@@ -4,9 +4,10 @@ from __future__ import annotations
 
 import hashlib
 import os
+import secrets
 from pathlib import Path
 
-from fastapi import BackgroundTasks, FastAPI, HTTPException, UploadFile
+from fastapi import BackgroundTasks, Depends, FastAPI, Header, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
@@ -36,6 +37,22 @@ app.add_middleware(
 UPLOADS.mkdir(parents=True, exist_ok=True)
 conn = store.connect(DB_PATH)
 
+API_KEY = os.environ.get("CARBONTRACE_API_KEY", "")
+DEV_NO_AUTH = os.environ.get("CARBONTRACE_DEV") == "1"
+if not API_KEY and not DEV_NO_AUTH:
+    raise RuntimeError("Set CARBONTRACE_API_KEY, or CARBONTRACE_DEV=1 for local development without auth.")
+
+
+def require_key(x_api_key: str = Header("")) -> None:
+    """Every route except /health needs the shared key. The web app sends it server-side, never from the browser."""
+    if DEV_NO_AUTH and not API_KEY:
+        return
+    if not secrets.compare_digest(x_api_key, API_KEY):
+        raise HTTPException(401, "Missing or wrong API key.")
+
+
+auth = [Depends(require_key)]
+
 
 def process_file(doc_id: str, path: Path, mime: str) -> None:
     try:
@@ -50,7 +67,7 @@ def health() -> dict:
     return {"ok": True}
 
 
-@app.post("/documents", status_code=202)
+@app.post("/documents", status_code=202, dependencies=auth)
 async def upload(file: UploadFile, background: BackgroundTasks) -> dict:
     data = await file.read(MAX_BYTES + 1)
     if len(data) > MAX_BYTES:
@@ -73,12 +90,12 @@ async def upload(file: UploadFile, background: BackgroundTasks) -> dict:
     return {"id": doc_id, "duplicate": False}
 
 
-@app.get("/documents")
+@app.get("/documents", dependencies=auth)
 def documents() -> list[dict]:
     return store.list_documents(conn)
 
 
-@app.get("/documents/{doc_id}")
+@app.get("/documents/{doc_id}", dependencies=auth)
 def document(doc_id: str) -> dict:
     doc = store.get_document(conn, doc_id)
     if doc is None:
@@ -86,7 +103,7 @@ def document(doc_id: str) -> dict:
     return doc
 
 
-@app.get("/documents/{doc_id}/file")
+@app.get("/documents/{doc_id}/file", dependencies=auth)
 def document_file(doc_id: str) -> FileResponse:
     row = conn.execute("SELECT path, mime FROM documents WHERE id = ?", (doc_id,)).fetchone()
     if row is None:
@@ -98,13 +115,13 @@ class Review(BaseModel):
     note: str = ""
 
 
-@app.post("/documents/{doc_id}/review")
+@app.post("/documents/{doc_id}/review", dependencies=auth)
 def review(doc_id: str, body: Review) -> dict:
     if not store.mark_reviewed(conn, doc_id, body.note[:500]):
         raise HTTPException(409, "Only processed documents can be marked reviewed.")
     return {"ok": True}
 
 
-@app.get("/summary")
+@app.get("/summary", dependencies=auth)
 def summary() -> dict:
     return store.summary(conn)

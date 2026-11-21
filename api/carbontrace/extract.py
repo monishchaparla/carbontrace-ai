@@ -28,7 +28,8 @@ from carbontrace.validate import check
 load_dotenv(Path(__file__).resolve().parents[1] / ".env")
 
 # Tried in order; override with GEMINI_MODELS="model-a,model-b" when Google retires a model.
-DEFAULT_MODELS = "gemini-3.8-flash,gemini-3.6-flash,gemini-3.5-flash,gemini-3.1-flash-lite"
+# 3.8 is newest but often overloaded (503 after a long wait), so it goes after the reliable ones.
+DEFAULT_MODELS = "gemini-3.6-flash,gemini-3.5-flash,gemini-3.8-flash,gemini-3.1-flash-lite"
 MODEL_CHAIN = [m.strip() for m in os.environ.get("GEMINI_MODELS", DEFAULT_MODELS).split(",") if m.strip()]
 
 PROMPT = """You read business documents for carbon accounting: electricity bills, fuel receipts,
