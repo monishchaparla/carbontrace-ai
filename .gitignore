@@ -10,3 +10,5 @@ __pycache__
 .claude/settings.local.json
 api/data/raw/*.pdf
 api/samples/*.err
+api/data/carbontrace.db
+api/data/uploads/

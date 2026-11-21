@@ -20,6 +20,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 from google import genai
 from google.genai import errors, types
+from pydantic import BaseModel
 
 from carbontrace.schema import ExtractedDocument, Flag
 from carbontrace.validate import check
@@ -68,7 +69,8 @@ def _client() -> genai.Client:
     return genai.Client(api_key=key)
 
 
-def extract(data: bytes, mime_type: str, *, client: genai.Client | None = None) -> Extraction:
+def generate(contents: list, schema: type[BaseModel], *, client: genai.Client | None = None) -> tuple[BaseModel, str, list[dict]]:
+    """Call Gemini with structured output, falling back across MODEL_CHAIN. Returns (parsed, model, attempts)."""
     client = client or _client()
     attempts: list[dict] = []
     for model in MODEL_CHAIN:
@@ -76,10 +78,10 @@ def extract(data: bytes, mime_type: str, *, client: genai.Client | None = None) 
         try:
             response = client.models.generate_content(
                 model=model,
-                contents=[types.Part.from_bytes(data=data, mime_type=mime_type), PROMPT],
+                contents=contents,
                 config=types.GenerateContentConfig(
                     response_mime_type="application/json",
-                    response_schema=ExtractedDocument,
+                    response_schema=schema,
                     temperature=0,
                     thinking_config=types.ThinkingConfig(thinking_level="low"),
                     http_options=types.HttpOptions(timeout=90_000),
@@ -94,12 +96,15 @@ def extract(data: bytes, mime_type: str, *, client: genai.Client | None = None) 
         except Exception as exc:  # 5xx, timeouts and connection drops: try the next model
             attempts.append({"model": model, "ok": False, "error": type(exc).__name__})
             continue
-        doc = response.parsed
-        if not isinstance(doc, ExtractedDocument):
-            doc = ExtractedDocument.model_validate_json(response.text)
+        parsed = response.parsed if isinstance(response.parsed, schema) else schema.model_validate_json(response.text)
         attempts.append({"model": model, "ok": True, "seconds": round(time.perf_counter() - started, 2)})
-        return Extraction(document=doc, flags=check(doc), model=model, attempts=attempts)
+        return parsed, model, attempts
     raise ExtractionError(f"All models failed: {attempts}")
+
+
+def extract(data: bytes, mime_type: str, *, client: genai.Client | None = None) -> Extraction:
+    doc, model, attempts = generate([types.Part.from_bytes(data=data, mime_type=mime_type), PROMPT], ExtractedDocument, client=client)
+    return Extraction(document=doc, flags=check(doc), model=model, attempts=attempts)
 
 
 def extract_file(path: str | Path, **kwargs) -> Extraction:
