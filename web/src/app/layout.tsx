@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Public_Sans } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { AppShell } from "@/components/app-shell";
+import { getSummary } from "@/lib/api";
+import { reviewCount as sampleReviewCount } from "@/lib/sample-data";
 import "./globals.css";
 
 const publicSans = Public_Sans({
@@ -9,6 +11,9 @@ const publicSans = Public_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
 });
+
+// Data comes from the API at request time, never baked in at build.
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "CarbonTrace AI",
@@ -22,7 +27,9 @@ export const viewport: Viewport = {
   ],
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const summary = await getSummary();
+  const reviewCount = summary && summary.documents > 0 ? summary.review_count : sampleReviewCount;
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${publicSans.variable} antialiased`}>
@@ -33,7 +40,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           Skip to content
         </a>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <AppShell>{children}</AppShell>
+          <AppShell reviewCount={reviewCount}>{children}</AppShell>
         </ThemeProvider>
       </body>
     </html>

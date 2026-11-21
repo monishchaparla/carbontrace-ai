@@ -79,6 +79,20 @@ def to_factor(row: pd.Series) -> Factor:
     return Factor(row["factor_id"], row["source"], row["source_version"], int(row["scope"]), row["name"], row["unit"], Decimal(row["kgco2e_per_unit"]))
 
 
+def _freight_mode(item: LineItem) -> str:
+    """Transport mode from the line's own words, decided in code so the model can't pick rail or vans for a truck load."""
+    text = " ".join(filter(None, [item.description, item.fuel_or_material])).lower()
+    if re.search(r"\b(rail|train|wagon|rake)\b", text):
+        return r"^rail"
+    if re.search(r"\b(air|flight|aircraft)\b", text):
+        return r"air"
+    if re.search(r"\b(ship|sea|vessel|ocean)\b", text):
+        return r"cargo ship|ship"
+    if re.search(r"\b(van|tempo|lcv|pickup)\b", text):
+        return r"^vans"
+    return r"hgv"  # Indian road freight invoices (MT x km, trucks, lorries) are heavy goods vehicles
+
+
 def candidates(item: LineItem, k: int = TOP_K) -> pd.DataFrame:
     """Top-k factors with a compatible unit, ranked by keyword relevance."""
     df = factor_table()
@@ -87,6 +101,8 @@ def candidates(item: LineItem, k: int = TOP_K) -> pd.DataFrame:
         dim = _dim("tkm")  # weight plus distance: the pipeline turns it into tonne-km
     if dim is not None:
         df = df[df["dim"] == dim]
+    if item.category == Category.freight and dim == _dim("tkm"):
+        df = df[df["name"].str.contains(_freight_mode(item), case=False, regex=True)]
     query = _tokens(" ".join(filter(None, [item.description, item.fuel_or_material, _CATEGORY_WORDS[item.category]])))
     idf, avg_len = _bm25_stats()
     scores = df["tokens"].map(lambda toks: _bm25(query, toks, idf, avg_len))

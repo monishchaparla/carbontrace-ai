@@ -40,6 +40,17 @@ def test_keyword_ranking_finds_diesel_in_top_3():
     assert any("diesel" in n.lower() for n in candidates(item(**DIESEL)).head(3)["name"])
 
 
+def test_road_freight_only_offers_hgv_factors():
+    road = item(description="Road freight Pune to Mumbai", quantity="450", unit="tkm", category=Category.freight)
+    names = list(candidates(road)["name"])
+    assert names and all("hgv" in n.lower() for n in names)
+
+
+def test_rail_freight_offers_rail_factors():
+    rail = item(description="Container by rail, Nagpur to JNPT", quantity="900", unit="tkm", category=Category.freight)
+    assert all(n.lower().startswith("rail") for n in candidates(rail)["name"])
+
+
 def test_model_pick_outside_shortlist_falls_back_and_flags():
     matches, flags = match_document(doc(item(**DIESEL)), picker=lambda d, s: [Pick(line_index=0, factor_id="made-up-id", reason="x")])
     assert matches[0].method == "keyword_fallback"

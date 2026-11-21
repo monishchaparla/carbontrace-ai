@@ -76,9 +76,17 @@ def activity(qty: int | str, unit: str, category: str, material: str | None, hin
             "expected_factor_hint": hint, "kg_co2e_hint": None}
 
 
-def truth(doc_type: str, start: date, end: date, activities: list, charges: int, flags: list | None = None) -> dict:
+# The benchmark was run on this date; documents issued after it are correctly flagged as future-dated.
+RUN_DATE = date(2026, 11, 21)
+
+
+def truth(doc_type: str, start: date, end: date, activities: list, charges: int, flags: list | None = None,
+          issued: date | None = None) -> dict:
+    flags = list(flags or [])
+    if (issued or start) > RUN_DATE:
+        flags.append("future_date")
     return {"doc_type": doc_type, "currency": "INR", "country": "IN", "period_start": start.isoformat(),
-            "period_end": end.isoformat(), "activities": activities, "charges": charges, "expected_flags": flags or []}
+            "period_end": end.isoformat(), "activities": activities, "charges": charges, "expected_flags": flags}
 
 
 # ---------- document builders: each returns (spec for rendering, ground truth) ----------
@@ -92,6 +100,7 @@ def electricity(rng, mwh=False, long_period=False, indian_fmt=False):
     else:
         m = rng.randint(1, 11)
         start, end = date(2026, m, 1), date(2026, m, monthrange(2026, m)[1])
+    bill_date = date(2026, 12, 15) if long_period else end.replace(day=28)
     energy = kwh * rng.uniform(7.5, 9.5)
     rows = [row("Energy consumed", indian(kwh) if indian_fmt else str(kwh), unit, energy),
             row(f"Fixed / demand charges ({kva} kVA)", str(kva), "kVA", kva * rng.uniform(300, 450)),
@@ -100,11 +109,12 @@ def electricity(rng, mwh=False, long_period=False, indian_fmt=False):
     if rng.random() < 0.4:
         rows.append(row("Meter rent", amount=rng.choice([150, 300, 450])))
     meta = [("Consumer", rng.choice(CUSTOMERS)), ("Consumer No.", str(rng.randrange(10**11, 10**12))),
-            ("Bill No.", f"BL/2026/{rng.randint(10000, 99999)}"), ("Bill Date", pdate(rng, date(2026, 12, 15) if long_period else end.replace(day=28))),
+            ("Bill No.", f"BL/2026/{rng.randint(10000, 99999)}"), ("Bill Date", pdate(rng, bill_date)),
             ("Billing Period", f"{pdate(rng, start)} to {pdate(rng, end)}"), ("Tariff", rng.choice(["LT-V(B) Industrial", "HT-I Industrial", "LT-II Commercial"]))]
     spec = {"supplier": rng.choice(UTILITIES), "subtitle": "Electricity Bill", "meta": meta, "rows": rows, "total_label": "Total payable"}
     flags = ["unit_suspect"] if mwh else ["period_too_long"] if long_period else []
-    return spec, truth("electricity_bill", start, end, [activity(kwh, unit, "electricity", None, "india grid electricity")], len(rows) - 1, flags)
+    return spec, truth("electricity_bill", start, end, [activity(kwh, unit, "electricity", None, "india grid electricity")], len(rows) - 1, flags,
+                       issued=bill_date)
 
 
 def fuel(rng, grey=False):

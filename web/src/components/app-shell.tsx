@@ -16,12 +16,11 @@ import {
   IconSun,
   IconMoon,
 } from "@tabler/icons-react";
-import { reviewCount } from "@/lib/sample-data";
 
 const nav = [
   { href: "/", label: "Overview", icon: IconLayoutDashboard },
   { href: "/documents", label: "Documents", icon: IconFileText },
-  { href: "/review", label: "Review", icon: IconChecklist, count: reviewCount },
+  { href: "/review", label: "Review", icon: IconChecklist },
   { href: "/factors", label: "Emission factors", icon: IconDatabase },
   { href: "/simulator", label: "What-if simulator", icon: IconAdjustmentsHorizontal },
 ];
@@ -69,12 +68,13 @@ function ThemeSwitch() {
   );
 }
 
-function NavList({ onNavigate }: { onNavigate?: () => void }) {
+function NavList({ onNavigate, reviewCount }: { onNavigate?: () => void; reviewCount: number }) {
   const pathname = usePathname();
   return (
     <ul className="space-y-0.5">
       {nav.map((item) => {
-        const active = pathname === item.href;
+        const active = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
+        const count = item.href === "/review" ? reviewCount : 0;
         return (
           <li key={item.href}>
             <Link
@@ -87,9 +87,9 @@ function NavList({ onNavigate }: { onNavigate?: () => void }) {
             >
               <item.icon size={18} stroke={1.75} aria-hidden="true" />
               <span className="flex-1">{item.label}</span>
-              {item.count ? (
+              {count ? (
                 <span className="num rounded-full bg-review-wash px-2 text-xs leading-5 text-review-ink">
-                  {item.count}
+                  {count}
                 </span>
               ) : null}
             </Link>
@@ -100,7 +100,7 @@ function NavList({ onNavigate }: { onNavigate?: () => void }) {
   );
 }
 
-export function AppShell({ children }: { children: React.ReactNode }) {
+export function AppShell({ children, reviewCount }: { children: React.ReactNode; reviewCount: number }) {
   const [open, setOpen] = useState(false);
   return (
     <div className="min-h-screen lg:grid lg:grid-cols-[248px_minmax(0,1fr)]">
@@ -110,7 +110,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           <span className="text-[15px] font-semibold tracking-tight">CarbonTrace</span>
         </div>
         <nav aria-label="Main" className="flex-1 px-3 pt-2">
-          <NavList />
+          <NavList reviewCount={reviewCount} />
         </nav>
         <div className="space-y-3 border-t border-rule p-4">
           <div className="text-xs text-ink-2">Acme Components Pvt Ltd</div>
@@ -136,7 +136,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       {open ? (
         <div id="mobile-nav" className="sticky top-14 z-10 space-y-4 border-b border-rule bg-surface p-4 lg:hidden">
           <nav aria-label="Main">
-            <NavList onNavigate={() => setOpen(false)} />
+            <NavList reviewCount={reviewCount} onNavigate={() => setOpen(false)} />
           </nav>
           <ThemeSwitch />
         </div>

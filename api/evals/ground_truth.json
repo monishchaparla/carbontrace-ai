@@ -37,7 +37,9 @@
       }
     ],
     "charges": 2,
-    "expected_flags": []
+    "expected_flags": [
+      "future_date"
+    ]
   },
   {
     "file": "doc_003.pdf",
@@ -77,7 +79,9 @@
       }
     ],
     "charges": 1,
-    "expected_flags": []
+    "expected_flags": [
+      "future_date"
+    ]
   },
   {
     "file": "doc_005.pdf",
@@ -179,7 +183,9 @@
       }
     ],
     "charges": 3,
-    "expected_flags": []
+    "expected_flags": [
+      "future_date"
+    ]
   },
   {
     "file": "doc_010.pdf",
@@ -219,7 +225,9 @@
       }
     ],
     "charges": 2,
-    "expected_flags": []
+    "expected_flags": [
+      "future_date"
+    ]
   },
   {
     "file": "doc_012.pdf",
@@ -279,7 +287,9 @@
       }
     ],
     "charges": 2,
-    "expected_flags": []
+    "expected_flags": [
+      "future_date"
+    ]
   },
   {
     "file": "doc_015.pdf",
@@ -381,7 +391,9 @@
       }
     ],
     "charges": 2,
-    "expected_flags": []
+    "expected_flags": [
+      "future_date"
+    ]
   },
   {
     "file": "doc_020.pdf",
@@ -501,7 +513,9 @@
       }
     ],
     "charges": 3,
-    "expected_flags": []
+    "expected_flags": [
+      "future_date"
+    ]
   },
   {
     "file": "doc_026.pdf",
@@ -884,7 +898,8 @@
     ],
     "charges": 3,
     "expected_flags": [
-      "period_too_long"
+      "period_too_long",
+      "future_date"
     ]
   },
   {
@@ -925,7 +940,9 @@
       }
     ],
     "charges": 2,
-    "expected_flags": []
+    "expected_flags": [
+      "future_date"
+    ]
   },
   {
     "file": "doc_047.pdf",
@@ -985,7 +1002,9 @@
       }
     ],
     "charges": 3,
-    "expected_flags": []
+    "expected_flags": [
+      "future_date"
+    ]
   },
   {
     "file": "doc_050.pdf",
