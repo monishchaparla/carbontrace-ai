@@ -1,0 +1,10 @@
+node_modules
+.next
+out
+.env*
+!.env.example
+.vercel
+__pycache__
+.venv
+*.pyc
+.claude/settings.local.json

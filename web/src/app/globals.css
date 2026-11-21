@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --canvas: #f5f7f6;
+  --surface: #ffffff;
+  --ink: #15211d;
+  --ink-2: #56635e;
+  --rule: #dfe5e2;
+  --pine: #17695a;
+  --pine-wash: #e3f0ec;
+  --on-pine: #ffffff;
+  --scope-1: #b0701c;
+  --scope-2: #3e6fae;
+  --scope-3: #6b8a3a;
+  --review-wash: #f7ecd9;
+  --review-ink: #7a4b0c;
+  --fail: #b3261e;
+  --fail-wash: #fbe6e4;
+}
+
+.dark {
+  --canvas: #0e1412;
+  --surface: #151d1a;
+  --ink: #e4ebe8;
+  --ink-2: #98a6a0;
+  --rule: #26302c;
+  --pine: #4dbe9f;
+  --pine-wash: #17302a;
+  --on-pine: #0e1412;
+  --scope-1: #d99a45;
+  --scope-2: #7fa6da;
+  --scope-3: #9dbb67;
+  --review-wash: #3a2b14;
+  --review-ink: #e8b86d;
+  --fail: #f2938c;
+  --fail-wash: #3b1a18;
+}
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-rule: var(--rule);
+  --color-pine: var(--pine);
+  --color-pine-wash: var(--pine-wash);
+  --color-on-pine: var(--on-pine);
+  --color-scope-1: var(--scope-1);
+  --color-scope-2: var(--scope-2);
+  --color-scope-3: var(--scope-3);
+  --color-review-wash: var(--review-wash);
+  --color-review-ink: var(--review-ink);
+  --color-fail: var(--fail);
+  --color-fail-wash: var(--fail-wash);
+  --font-sans: var(--font-public-sans), system-ui, sans-serif;
+}
+
+html {
+  color-scheme: light;
+}
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  touch-action: manipulation;
+}
+
+h1,
+h2 {
+  text-wrap: balance;
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+:focus-visible {
+  outline: 2px solid var(--pine);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body {
+    transition: background-color 150ms ease, color 150ms ease;
+  }
+}
