@@ -1,0 +1,13 @@
+.venv
+__pycache__
+*.pyc
+.pytest_cache
+data/raw
+data/*.db
+data/uploads
+samples
+evals/holdout
+tests
+scripts
+.env
+.env.local

@@ -1,0 +1,121 @@
+{
+ "seconds": 23.7,
+ "model": "gemini-3.1-flash-lite",
+ "attempts": [
+  {
+   "model": "gemini-3.6-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.5-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.1-flash-lite",
+   "ok": true,
+   "seconds": 4.67
+  }
+ ],
+ "document": {
+  "doc_type": "freight_invoice",
+  "supplier": "Sundarban Transport Co",
+  "invoice_number": "RF/70633",
+  "invoice_date": "2026-12-16",
+  "period_start": null,
+  "period_end": null,
+  "currency": "INR",
+  "country": "IN",
+  "line_items": [
+   {
+    "description": "Road freight Delhi to Jaipur",
+    "quantity": "2800",
+    "unit": "tkm",
+    "amount": "7191.45",
+    "category": "freight",
+    "is_activity": true,
+    "fuel_or_material": null,
+    "origin": "Delhi",
+    "destination": "Jaipur",
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     298,
+     94,
+     312,
+     866
+    ],
+    "confidence": 1.0
+   },
+   {
+    "description": "Loading / unloading",
+    "quantity": null,
+    "unit": null,
+    "amount": "2500.00",
+    "category": "freight",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     318,
+     94,
+     332,
+     866
+    ],
+    "confidence": 1.0
+   },
+   {
+    "description": "GST @ 5%",
+    "quantity": null,
+    "unit": null,
+    "amount": "359.57",
+    "category": "freight",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     338,
+     94,
+     352,
+     866
+    ],
+    "confidence": 1.0
+   }
+  ]
+ },
+ "flags": [
+  {
+   "code": "future_date",
+   "message": "Invoice date is in the future.",
+   "line_index": null
+  }
+ ],
+ "lines": [
+  {
+   "line_index": 0,
+   "factor_id": "desnz-2026:27_304_3132_14_1",
+   "method": "model",
+   "shortlist": [
+    "desnz-2026:27_306_3132_14_1",
+    "desnz-2026:27_306_3130_14_1",
+    "desnz-2026:27_306_3131_14_1"
+   ],
+   "kg_co2e": "219.380000"
+  }
+ ]
+}

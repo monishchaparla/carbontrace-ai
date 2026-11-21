@@ -1,0 +1,134 @@
+{
+ "seconds": 3.8,
+ "model": "gemini-3.1-flash-lite",
+ "attempts": [
+  {
+   "model": "gemini-3.6-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.5-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.1-flash-lite",
+   "ok": true,
+   "seconds": 2.6
+  }
+ ],
+ "document": {
+  "doc_type": "electricity_bill",
+  "supplier": "Malwa Electric Supply Ltd (fictional)",
+  "invoice_number": "BL/2026/36067",
+  "invoice_date": "2026-01-28",
+  "period_start": "2026-01-01",
+  "period_end": "2026-01-31",
+  "currency": "INR",
+  "country": "IN",
+  "line_items": [
+   {
+    "description": "Energy consumed",
+    "quantity": "138200",
+    "unit": "units",
+    "amount": "1048347.29",
+    "category": "electricity",
+    "is_activity": true,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     298,
+     295,
+     312,
+     415
+    ],
+    "confidence": 1.0
+   },
+   {
+    "description": "Fixed / demand charges (220 kVA)",
+    "quantity": "220",
+    "unit": "kVA",
+    "amount": "95160.90",
+    "category": "electricity",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     319,
+     295,
+     333,
+     485
+    ],
+    "confidence": 1.0
+   },
+   {
+    "description": "Electricity duty",
+    "quantity": null,
+    "unit": null,
+    "amount": "78626.05",
+    "category": "electricity",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     340,
+     295,
+     354,
+     405
+    ],
+    "confidence": 1.0
+   },
+   {
+    "description": "Fuel adjustment charge",
+    "quantity": "138200",
+    "unit": "units",
+    "amount": "74701.86",
+    "category": "electricity",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     361,
+     295,
+     375,
+     425
+    ],
+    "confidence": 1.0
+   }
+  ]
+ },
+ "flags": [],
+ "lines": [
+  {
+   "line_index": 0,
+   "factor_id": "cea-v22:india-grid-fy2025-26",
+   "method": "rule",
+   "shortlist": [
+    "cea-v22:india-grid-fy2025-26"
+   ],
+   "kg_co2e": "93285.000000"
+  }
+ ]
+}

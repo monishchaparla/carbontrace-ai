@@ -1,0 +1,114 @@
+{
+ "seconds": 5.2,
+ "model": "gemini-3.1-flash-lite",
+ "attempts": [
+  {
+   "model": "gemini-3.6-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.5-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.1-flash-lite",
+   "ok": true,
+   "seconds": 2.7
+  }
+ ],
+ "document": {
+  "doc_type": "electricity_bill",
+  "supplier": "Narmada Urja Vitaran (fictional)",
+  "invoice_number": "BL/2026/95946",
+  "invoice_date": "2026-03-28",
+  "period_start": "2026-03-01",
+  "period_end": "2026-03-31",
+  "currency": "INR",
+  "country": "IN",
+  "line_items": [
+   {
+    "description": "Energy consumed",
+    "quantity": "104050",
+    "unit": "units",
+    "amount": "945001.89",
+    "category": "electricity",
+    "is_activity": true,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": null,
+    "confidence": 1.0
+   },
+   {
+    "description": "Fixed / demand charges (100 kVA)",
+    "quantity": "100",
+    "unit": "kVA",
+    "amount": "39239.32",
+    "category": "electricity",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": null,
+    "confidence": 1.0
+   },
+   {
+    "description": "Electricity duty",
+    "quantity": null,
+    "unit": null,
+    "amount": "70875.14",
+    "category": "electricity",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": null,
+    "confidence": 1.0
+   },
+   {
+    "description": "Fuel adjustment charge",
+    "quantity": "104050",
+    "unit": "units",
+    "amount": "48842.10",
+    "category": "electricity",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": null,
+    "confidence": 1.0
+   }
+  ]
+ },
+ "flags": [],
+ "lines": [
+  {
+   "line_index": 0,
+   "factor_id": "cea-v22:india-grid-fy2025-26",
+   "method": "rule",
+   "shortlist": [
+    "cea-v22:india-grid-fy2025-26"
+   ],
+   "kg_co2e": "70233.750000"
+  }
+ ]
+}

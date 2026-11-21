@@ -1,0 +1,94 @@
+{
+ "seconds": 5.5,
+ "model": "gemini-3.1-flash-lite",
+ "attempts": [
+  {
+   "model": "gemini-3.6-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.5-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.1-flash-lite",
+   "ok": true,
+   "seconds": 2.23
+  }
+ ],
+ "document": {
+  "doc_type": "supplier_invoice",
+  "supplier": "Aranya City Gas",
+  "invoice_number": "GS-14166",
+  "invoice_date": "2026-04-16",
+  "period_start": null,
+  "period_end": null,
+  "currency": "INR",
+  "country": "IN",
+  "line_items": [
+   {
+    "description": "Piped natural gas supply",
+    "quantity": "4200",
+    "unit": "SCM",
+    "amount": "250724.23",
+    "category": "fuel",
+    "is_activity": true,
+    "fuel_or_material": "natural gas",
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     235,
+     94,
+     248,
+     808
+    ],
+    "confidence": 0.95
+   },
+   {
+    "description": "GST @ 18%",
+    "quantity": null,
+    "unit": null,
+    "amount": "45130.36",
+    "category": "other",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     261,
+     94,
+     274,
+     656
+    ],
+    "confidence": 0.95
+   }
+  ]
+ },
+ "flags": [],
+ "lines": [
+  {
+   "line_index": 0,
+   "factor_id": "desnz-2026:1_100_1004_1_1",
+   "method": "model",
+   "shortlist": [
+    "desnz-2026:1_100_1004_1_1",
+    "desnz-2026:11_100_1004_1_1",
+    "desnz-2026:1_100_1005_1_1"
+   ],
+   "kg_co2e": "8510.586000"
+  }
+ ]
+}

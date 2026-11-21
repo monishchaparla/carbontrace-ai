@@ -1,0 +1,145 @@
+{
+ "seconds": 4.3,
+ "model": "gemini-3.1-flash-lite",
+ "attempts": [
+  {
+   "model": "gemini-3.6-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.5-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.1-flash-lite",
+   "ok": true,
+   "seconds": 3.52
+  }
+ ],
+ "document": {
+  "doc_type": "electricity_bill",
+  "supplier": "Sahyadri Power Distribution Ltd",
+  "invoice_number": "BL/2026/64843",
+  "invoice_date": "2026-12-15",
+  "period_start": "2025-11-01",
+  "period_end": "2026-12-31",
+  "currency": "INR",
+  "country": "IN",
+  "line_items": [
+   {
+    "description": "Energy consumed",
+    "quantity": "171400",
+    "unit": "units",
+    "amount": "1304238.85",
+    "category": "electricity",
+    "is_activity": true,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     164,
+     94,
+     174,
+     857
+    ],
+    "confidence": 1.0
+   },
+   {
+    "description": "Fixed / demand charges (310 kVA)",
+    "quantity": "310",
+    "unit": "kVA",
+    "amount": "100852.87",
+    "category": "electricity",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     187,
+     94,
+     197,
+     857
+    ],
+    "confidence": 1.0
+   },
+   {
+    "description": "Electricity duty",
+    "quantity": null,
+    "unit": null,
+    "amount": "97817.91",
+    "category": "electricity",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     210,
+     94,
+     220,
+     857
+    ],
+    "confidence": 1.0
+   },
+   {
+    "description": "Fuel adjustment charge",
+    "quantity": "171400",
+    "unit": "units",
+    "amount": "87224.28",
+    "category": "electricity",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     233,
+     94,
+     243,
+     857
+    ],
+    "confidence": 1.0
+   }
+  ]
+ },
+ "flags": [
+  {
+   "code": "period_too_long",
+   "message": "Date range spans 14 months.",
+   "line_index": null
+  },
+  {
+   "code": "future_date",
+   "message": "Invoice date is in the future.",
+   "line_index": null
+  }
+ ],
+ "lines": [
+  {
+   "line_index": 0,
+   "factor_id": "cea-v22:india-grid-fy2025-26",
+   "method": "rule",
+   "shortlist": [
+    "cea-v22:india-grid-fy2025-26"
+   ],
+   "kg_co2e": "115695.000000"
+  }
+ ]
+}

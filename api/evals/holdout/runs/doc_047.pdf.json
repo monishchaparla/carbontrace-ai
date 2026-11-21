@@ -1,0 +1,155 @@
+{
+ "seconds": 11.1,
+ "model": "gemini-3.1-flash-lite",
+ "attempts": [
+  {
+   "model": "gemini-3.6-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.5-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.1-flash-lite",
+   "ok": true,
+   "seconds": 10.5
+  }
+ ],
+ "document": {
+  "doc_type": "electricity_bill",
+  "supplier": "Narmada Urja Vitaran (fictional)",
+  "invoice_number": "BL/2026/99204",
+  "invoice_date": "2026-01-28",
+  "period_start": "2026-01-01",
+  "period_end": "2026-01-31",
+  "currency": "INR",
+  "country": "IN",
+  "line_items": [
+   {
+    "description": "Energy consumed",
+    "quantity": "113750",
+    "unit": "kWh",
+    "amount": "916852.48",
+    "category": "electricity",
+    "is_activity": true,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     164,
+     294,
+     174,
+     403
+    ],
+    "confidence": 1.0
+   },
+   {
+    "description": "Fixed / demand charges (370 kVA)",
+    "quantity": "370",
+    "unit": "kVA",
+    "amount": "147822.38",
+    "category": "electricity",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     188,
+     294,
+     198,
+     504
+    ],
+    "confidence": 1.0
+   },
+   {
+    "description": "Electricity duty",
+    "quantity": null,
+    "unit": null,
+    "amount": "68763.94",
+    "category": "electricity",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     212,
+     294,
+     222,
+     403
+    ],
+    "confidence": 1.0
+   },
+   {
+    "description": "Fuel adjustment charge",
+    "quantity": "113750",
+    "unit": "kWh",
+    "amount": "58242.92",
+    "category": "electricity",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     236,
+     294,
+     246,
+     435
+    ],
+    "confidence": 1.0
+   },
+   {
+    "description": "Meter rent",
+    "quantity": null,
+    "unit": null,
+    "amount": "150.00",
+    "category": "electricity",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     260,
+     294,
+     270,
+     363
+    ],
+    "confidence": 1.0
+   }
+  ]
+ },
+ "flags": [],
+ "lines": [
+  {
+   "line_index": 0,
+   "factor_id": "cea-v22:india-grid-fy2025-26",
+   "method": "rule",
+   "shortlist": [
+    "cea-v22:india-grid-fy2025-26"
+   ],
+   "kg_co2e": "76781.250000"
+  }
+ ]
+}

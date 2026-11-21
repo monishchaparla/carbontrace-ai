@@ -13,3 +13,4 @@ api/samples/*.err
 api/data/carbontrace.db
 api/data/uploads/
 api/data/*.db
+.secrets/

@@ -1,0 +1,142 @@
+{
+ "seconds": 8.2,
+ "model": "gemini-3.1-flash-lite",
+ "attempts": [
+  {
+   "model": "gemini-3.6-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.5-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.1-flash-lite",
+   "ok": true,
+   "seconds": 3.02
+  }
+ ],
+ "document": {
+  "doc_type": "freight_invoice",
+  "supplier": "Trishul Roadlines (fictional)",
+  "invoice_number": "RF/93934",
+  "invoice_date": "2026-12-20",
+  "period_start": null,
+  "period_end": null,
+  "currency": "INR",
+  "country": "IN",
+  "line_items": [
+   {
+    "description": "Freight Ludhiana to Delhi, 19 MT x 310 km",
+    "quantity": "19",
+    "unit": "MT",
+    "amount": "15205.35",
+    "category": "freight",
+    "is_activity": true,
+    "fuel_or_material": null,
+    "origin": "Ludhiana",
+    "destination": "Delhi",
+    "weight_tonnes": "19",
+    "distance_km": "310",
+    "page": 1,
+    "box_2d": [
+     164,
+     94,
+     176,
+     765
+    ],
+    "confidence": 0.95
+   },
+   {
+    "description": "Fuel surcharge",
+    "quantity": null,
+    "unit": null,
+    "amount": "912.32",
+    "category": "freight",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     187,
+     94,
+     199,
+     658
+    ],
+    "confidence": 0.95
+   },
+   {
+    "description": "Loading / unloading",
+    "quantity": null,
+    "unit": null,
+    "amount": "1500.00",
+    "category": "freight",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     209,
+     94,
+     221,
+     658
+    ],
+    "confidence": 0.95
+   },
+   {
+    "description": "GST @ 5%",
+    "quantity": null,
+    "unit": null,
+    "amount": "760.27",
+    "category": "freight",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     232,
+     94,
+     244,
+     658
+    ],
+    "confidence": 0.95
+   }
+  ]
+ },
+ "flags": [
+  {
+   "code": "future_date",
+   "message": "Invoice date is in the future.",
+   "line_index": null
+  }
+ ],
+ "lines": [
+  {
+   "line_index": 0,
+   "factor_id": "desnz-2026:27_304_3132_14_1",
+   "method": "model",
+   "shortlist": [
+    "desnz-2026:27_306_3132_14_1",
+    "desnz-2026:27_306_3130_14_1",
+    "desnz-2026:27_306_3131_14_1"
+   ],
+   "kg_co2e": "461.481500"
+  }
+ ]
+}

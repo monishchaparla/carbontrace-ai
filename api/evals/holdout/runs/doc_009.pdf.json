@@ -1,0 +1,142 @@
+{
+ "seconds": 9.5,
+ "model": "gemini-3.1-flash-lite",
+ "attempts": [
+  {
+   "model": "gemini-3.6-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.5-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.1-flash-lite",
+   "ok": true,
+   "seconds": 4.21
+  }
+ ],
+ "document": {
+  "doc_type": "fuel_receipt",
+  "supplier": "Gomti Fuel Point (fictional)",
+  "invoice_number": "FU-19179",
+  "invoice_date": "2026-11-26",
+  "period_start": null,
+  "period_end": null,
+  "currency": "INR",
+  "country": "IN",
+  "line_items": [
+   {
+    "description": "High speed diesel",
+    "quantity": "2475",
+    "unit": "litres",
+    "amount": "221015.29",
+    "category": "fuel",
+    "is_activity": true,
+    "fuel_or_material": "diesel",
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     163,
+     86,
+     176,
+     825
+    ],
+    "confidence": 1.0
+   },
+   {
+    "description": "CGST @ 9%",
+    "quantity": null,
+    "unit": null,
+    "amount": "19891.38",
+    "category": "other",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     185,
+     86,
+     198,
+     825
+    ],
+    "confidence": 1.0
+   },
+   {
+    "description": "SGST @ 9%",
+    "quantity": null,
+    "unit": null,
+    "amount": "19891.38",
+    "category": "other",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     207,
+     86,
+     220,
+     825
+    ],
+    "confidence": 1.0
+   },
+   {
+    "description": "Delivery charge",
+    "quantity": null,
+    "unit": null,
+    "amount": "600.00",
+    "category": "other",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     229,
+     86,
+     242,
+     825
+    ],
+    "confidence": 1.0
+   }
+  ]
+ },
+ "flags": [
+  {
+   "code": "future_date",
+   "message": "Invoice date is in the future.",
+   "line_index": null
+  }
+ ],
+ "lines": [
+  {
+   "line_index": 0,
+   "factor_id": "desnz-2026:1_101_1012_8_1",
+   "method": "model",
+   "shortlist": [
+    "desnz-2026:1_101_1012_8_1",
+    "desnz-2026:11_101_1012_8_1",
+    "desnz-2026:1_101_1011_8_1"
+   ],
+   "kg_co2e": "6587.336250"
+  }
+ ]
+}

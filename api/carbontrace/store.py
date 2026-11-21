@@ -7,7 +7,6 @@ from __future__ import annotations
 
 import json
 import sqlite3
-import uuid
 from datetime import datetime, timezone
 from decimal import Decimal
 from pathlib import Path
@@ -78,7 +77,8 @@ def find_by_hash(conn: sqlite3.Connection, sha256: str) -> str | None:
 
 
 def create_document(conn: sqlite3.Connection, filename: str, mime: str, sha256: str, path: str) -> str:
-    doc_id = uuid.uuid4().hex[:12]
+    # Derived from the content hash so every serverless instance (each with its own seeded /tmp DB) agrees on ids.
+    doc_id = sha256[:12]
     with conn:
         conn.execute(
             "INSERT INTO documents (id, filename, mime, sha256, path, status, uploaded_at) VALUES (?, ?, ?, ?, ?, 'processing', ?)",

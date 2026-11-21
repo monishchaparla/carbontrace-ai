@@ -1,0 +1,115 @@
+{
+ "seconds": 10.3,
+ "model": "gemini-3.1-flash-lite",
+ "attempts": [
+  {
+   "model": "gemini-3.6-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.5-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.1-flash-lite",
+   "ok": true,
+   "seconds": 4.5
+  }
+ ],
+ "document": {
+  "doc_type": "fuel_receipt",
+  "supplier": "Rajmarg Fuels (fictional)",
+  "invoice_number": "FU-90772",
+  "invoice_date": "2026-08-02",
+  "period_start": null,
+  "period_end": null,
+  "currency": "INR",
+  "country": "IN",
+  "line_items": [
+   {
+    "description": "Motor spirit (petrol)",
+    "quantity": "269",
+    "unit": "L",
+    "amount": "27035.42",
+    "category": "fuel",
+    "is_activity": true,
+    "fuel_or_material": "petrol",
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     256,
+     148,
+     269,
+     857
+    ],
+    "confidence": 0.95
+   },
+   {
+    "description": "CGST @ 9%",
+    "quantity": null,
+    "unit": null,
+    "amount": "2433.19",
+    "category": "fuel",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     281,
+     295,
+     294,
+     857
+    ],
+    "confidence": 0.95
+   },
+   {
+    "description": "SGST @ 9%",
+    "quantity": null,
+    "unit": null,
+    "amount": "2433.19",
+    "category": "fuel",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     306,
+     295,
+     319,
+     857
+    ],
+    "confidence": 0.95
+   }
+  ]
+ },
+ "flags": [],
+ "lines": [
+  {
+   "line_index": 0,
+   "factor_id": "desnz-2026:1_101_1018_8_1",
+   "method": "model",
+   "shortlist": [
+    "desnz-2026:1_101_1018_8_1",
+    "desnz-2026:11_101_1018_8_1",
+    "desnz-2026:1_101_1008_8_1"
+   ],
+   "kg_co2e": "633.150680"
+  }
+ ]
+}

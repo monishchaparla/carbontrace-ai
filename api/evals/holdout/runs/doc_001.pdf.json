@@ -1,0 +1,115 @@
+{
+ "seconds": 17.3,
+ "model": "gemini-3.1-flash-lite",
+ "attempts": [
+  {
+   "model": "gemini-3.6-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.5-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.1-flash-lite",
+   "ok": true,
+   "seconds": 2.86
+  }
+ ],
+ "document": {
+  "doc_type": "freight_invoice",
+  "supplier": "Pinaka Logistics (fictional)",
+  "invoice_number": "RF/96246",
+  "invoice_date": "2026-01-16",
+  "period_start": null,
+  "period_end": null,
+  "currency": "INR",
+  "country": "IN",
+  "line_items": [
+   {
+    "description": "Freight Ludhiana to Delhi, 23 MT x 310 km",
+    "quantity": "23",
+    "unit": "MT",
+    "amount": "22099.47",
+    "category": "freight",
+    "is_activity": true,
+    "fuel_or_material": null,
+    "origin": "Ludhiana",
+    "destination": "Delhi",
+    "weight_tonnes": "23",
+    "distance_km": "310",
+    "page": 1,
+    "box_2d": [
+     297,
+     295,
+     310,
+     665
+    ],
+    "confidence": 0.95
+   },
+   {
+    "description": "Loading / unloading",
+    "quantity": null,
+    "unit": null,
+    "amount": "1500.00",
+    "category": "freight",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     318,
+     295,
+     331,
+     465
+    ],
+    "confidence": 0.95
+   },
+   {
+    "description": "GST @ 5%",
+    "quantity": null,
+    "unit": null,
+    "amount": "1104.97",
+    "category": "other",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     340,
+     295,
+     353,
+     385
+    ],
+    "confidence": 0.95
+   }
+  ]
+ },
+ "flags": [],
+ "lines": [
+  {
+   "line_index": 0,
+   "factor_id": "desnz-2026:27_304_3132_14_1",
+   "method": "model",
+   "shortlist": [
+    "desnz-2026:27_306_3132_14_1",
+    "desnz-2026:27_306_3130_14_1",
+    "desnz-2026:27_306_3131_14_1"
+   ],
+   "kg_co2e": "558.635500"
+  }
+ ]
+}

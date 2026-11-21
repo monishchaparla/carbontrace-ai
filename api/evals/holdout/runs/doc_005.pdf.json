@@ -1,0 +1,134 @@
+{
+ "seconds": 19.9,
+ "model": "gemini-3.1-flash-lite",
+ "attempts": [
+  {
+   "model": "gemini-3.6-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.5-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.1-flash-lite",
+   "ok": true,
+   "seconds": 19.23
+  }
+ ],
+ "document": {
+  "doc_type": "electricity_bill",
+  "supplier": "Himgiri Power Co",
+  "invoice_number": "BL/2026/14499",
+  "invoice_date": "2026-04-28",
+  "period_start": "2026-04-01",
+  "period_end": "2026-04-30",
+  "currency": "INR",
+  "country": "IN",
+  "line_items": [
+   {
+    "description": "Energy consumed",
+    "quantity": "178650",
+    "unit": "KWH",
+    "amount": "1459246.01",
+    "category": "electricity",
+    "is_activity": true,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     298,
+     295,
+     310,
+     400
+    ],
+    "confidence": 1.0
+   },
+   {
+    "description": "Fixed / demand charges (250 kVA)",
+    "quantity": "250",
+    "unit": "kVA",
+    "amount": "107729.92",
+    "category": "electricity",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     318,
+     295,
+     330,
+     585
+    ],
+    "confidence": 1.0
+   },
+   {
+    "description": "Electricity duty",
+    "quantity": null,
+    "unit": null,
+    "amount": "109443.45",
+    "category": "electricity",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     338,
+     295,
+     350,
+     430
+    ],
+    "confidence": 1.0
+   },
+   {
+    "description": "Fuel adjustment charge",
+    "quantity": "178650",
+    "unit": "KWH",
+    "amount": "64246.59",
+    "category": "electricity",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     358,
+     295,
+     370,
+     495
+    ],
+    "confidence": 1.0
+   }
+  ]
+ },
+ "flags": [],
+ "lines": [
+  {
+   "line_index": 0,
+   "factor_id": "cea-v22:india-grid-fy2025-26",
+   "method": "rule",
+   "shortlist": [
+    "cea-v22:india-grid-fy2025-26"
+   ],
+   "kg_co2e": "120588.750000"
+  }
+ ]
+}

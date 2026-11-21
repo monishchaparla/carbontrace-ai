@@ -1,0 +1,454 @@
+{
+ "documents": 50,
+ "pipeline_errors": 0,
+ "activity_lines": 50,
+ "extraction_recall_pct": 100.0,
+ "spurious_activity_lines": 0,
+ "factor_accuracy_pct": 100.0,
+ "factor_recall_at_3_pct": 100.0,
+ "calc_lines_within_0_5pct": 100.0,
+ "calc_lines_scored": 50,
+ "flag_recall": "10/10",
+ "clean_docs_with_any_flag": "0/41",
+ "median_seconds_per_doc": 8.399999999999999,
+ "per_doc": [
+  {
+   "file": "doc_001.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 17.3
+  },
+  {
+   "file": "doc_002.pdf",
+   "missed": [],
+   "flags": [
+    "future_date"
+   ],
+   "expected": [
+    "future_date"
+   ],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 23.7
+  },
+  {
+   "file": "doc_003.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 10.3
+  },
+  {
+   "file": "doc_004.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 9.1
+  },
+  {
+   "file": "doc_005.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 19.9
+  },
+  {
+   "file": "doc_006.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 9.7
+  },
+  {
+   "file": "doc_007.pdf",
+   "missed": [],
+   "flags": [
+    "future_date"
+   ],
+   "expected": [
+    "future_date"
+   ],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 8.2
+  },
+  {
+   "file": "doc_008.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 12.3
+  },
+  {
+   "file": "doc_009.pdf",
+   "missed": [],
+   "flags": [
+    "future_date"
+   ],
+   "expected": [
+    "future_date"
+   ],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 9.5
+  },
+  {
+   "file": "doc_010.pdf",
+   "missed": [],
+   "flags": [
+    "unit_suspect"
+   ],
+   "expected": [
+    "unit_suspect"
+   ],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 4.3
+  },
+  {
+   "file": "doc_011.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 3.4
+  },
+  {
+   "file": "doc_012.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 14.1
+  },
+  {
+   "file": "doc_013.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 4.0
+  },
+  {
+   "file": "doc_014.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 7.2
+  },
+  {
+   "file": "doc_015.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 5.3
+  },
+  {
+   "file": "doc_016.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 54.9
+  },
+  {
+   "file": "doc_017.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 18.8
+  },
+  {
+   "file": "doc_018.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 11.0
+  },
+  {
+   "file": "doc_019.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 3.6
+  },
+  {
+   "file": "doc_020.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 9.5
+  },
+  {
+   "file": "doc_021.pdf",
+   "missed": [],
+   "flags": [
+    "unit_suspect"
+   ],
+   "expected": [
+    "unit_suspect"
+   ],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 3.7
+  },
+  {
+   "file": "doc_022.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 5.9
+  },
+  {
+   "file": "doc_023.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 6.4
+  },
+  {
+   "file": "doc_024.pdf",
+   "missed": [],
+   "flags": [
+    "unit_suspect"
+   ],
+   "expected": [
+    "unit_suspect"
+   ],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 9.8
+  },
+  {
+   "file": "doc_025.pdf",
+   "missed": [],
+   "flags": [
+    "future_date",
+    "period_too_long"
+   ],
+   "expected": [
+    "period_too_long",
+    "future_date"
+   ],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 4.3
+  },
+  {
+   "file": "doc_026.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 5.2
+  },
+  {
+   "file": "doc_027.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 11.2
+  },
+  {
+   "file": "doc_028.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 23.7
+  },
+  {
+   "file": "doc_029.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 6.6
+  },
+  {
+   "file": "doc_030.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 12.3
+  },
+  {
+   "file": "doc_031.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 3.8
+  },
+  {
+   "file": "doc_032.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 8.2
+  },
+  {
+   "file": "doc_033.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 22.8
+  },
+  {
+   "file": "doc_034.pdf",
+   "missed": [],
+   "flags": [
+    "future_date"
+   ],
+   "expected": [
+    "future_date"
+   ],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 12.4
+  },
+  {
+   "file": "doc_035.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 3.5
+  },
+  {
+   "file": "doc_036.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 18.5
+  },
+  {
+   "file": "doc_037.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 18.2
+  },
+  {
+   "file": "doc_038.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 5.5
+  },
+  {
+   "file": "doc_039.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 7.2
+  },
+  {
+   "file": "doc_040.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 6.1
+  },
+  {
+   "file": "doc_041.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 18.2
+  },
+  {
+   "file": "doc_042.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 7.6
+  },
+  {
+   "file": "doc_043.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 4.9
+  },
+  {
+   "file": "doc_044.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 6.8
+  },
+  {
+   "file": "doc_045.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 7.0
+  },
+  {
+   "file": "doc_046.pdf",
+   "missed": [],
+   "flags": [
+    "future_date"
+   ],
+   "expected": [
+    "future_date"
+   ],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 8.9
+  },
+  {
+   "file": "doc_047.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 11.1
+  },
+  {
+   "file": "doc_048.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 8.6
+  },
+  {
+   "file": "doc_049.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 6.8
+  },
+  {
+   "file": "doc_050.pdf",
+   "missed": [],
+   "flags": [],
+   "expected": [],
+   "model": "gemini-3.1-flash-lite",
+   "seconds": 6.8
+  }
+ ]
+}

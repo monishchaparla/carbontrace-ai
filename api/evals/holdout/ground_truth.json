@@ -1,0 +1,1021 @@
+[
+  {
+    "file": "doc_001.pdf",
+    "doc_type": "freight_invoice",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-01-16",
+    "period_end": "2026-01-16",
+    "activities": [
+      {
+        "quantity": "7130",
+        "unit": "tkm",
+        "category": "freight",
+        "fuel_or_material": null,
+        "expected_factor_hint": "road freight tonne-km",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 2,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_002.pdf",
+    "doc_type": "freight_invoice",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-12-16",
+    "period_end": "2026-12-16",
+    "activities": [
+      {
+        "quantity": "2800",
+        "unit": "tkm",
+        "category": "freight",
+        "fuel_or_material": null,
+        "expected_factor_hint": "road freight tonne-km",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 2,
+    "expected_flags": [
+      "future_date"
+    ]
+  },
+  {
+    "file": "doc_003.pdf",
+    "doc_type": "fuel_receipt",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-08-02",
+    "period_end": "2026-08-02",
+    "activities": [
+      {
+        "quantity": "269",
+        "unit": "L",
+        "category": "fuel",
+        "fuel_or_material": "petrol",
+        "expected_factor_hint": "petrol",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 2,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_004.pdf",
+    "doc_type": "fuel_receipt",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-07-11",
+    "period_end": "2026-07-11",
+    "activities": [
+      {
+        "quantity": "654.2",
+        "unit": "Ltr",
+        "category": "fuel",
+        "fuel_or_material": "petrol",
+        "expected_factor_hint": "petrol",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 2,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_005.pdf",
+    "doc_type": "electricity_bill",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-04-01",
+    "period_end": "2026-04-30",
+    "activities": [
+      {
+        "quantity": "178650",
+        "unit": "KWH",
+        "category": "electricity",
+        "fuel_or_material": null,
+        "expected_factor_hint": "india grid electricity",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 3,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_006.pdf",
+    "doc_type": "fuel_receipt",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-09-15",
+    "period_end": "2026-09-15",
+    "activities": [
+      {
+        "quantity": "831.3",
+        "unit": "L",
+        "category": "fuel",
+        "fuel_or_material": "diesel",
+        "expected_factor_hint": "diesel",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 3,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_007.pdf",
+    "doc_type": "freight_invoice",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-12-20",
+    "period_end": "2026-12-20",
+    "activities": [
+      {
+        "quantity": "5890",
+        "unit": "tkm",
+        "category": "freight",
+        "fuel_or_material": null,
+        "expected_factor_hint": "road freight tonne-km",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 3,
+    "expected_flags": [
+      "future_date"
+    ]
+  },
+  {
+    "file": "doc_008.pdf",
+    "doc_type": "fuel_receipt",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-04-16",
+    "period_end": "2026-04-16",
+    "activities": [
+      {
+        "quantity": "1204",
+        "unit": "L",
+        "category": "fuel",
+        "fuel_or_material": "petrol",
+        "expected_factor_hint": "petrol",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 3,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_009.pdf",
+    "doc_type": "fuel_receipt",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-11-26",
+    "period_end": "2026-11-26",
+    "activities": [
+      {
+        "quantity": "2475",
+        "unit": "litres",
+        "category": "fuel",
+        "fuel_or_material": "diesel",
+        "expected_factor_hint": "diesel",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 3,
+    "expected_flags": [
+      "future_date"
+    ]
+  },
+  {
+    "file": "doc_010.pdf",
+    "doc_type": "electricity_bill",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-10-01",
+    "period_end": "2026-10-31",
+    "activities": [
+      {
+        "quantity": "19800",
+        "unit": "MWh",
+        "category": "electricity",
+        "fuel_or_material": null,
+        "expected_factor_hint": "india grid electricity",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 4,
+    "expected_flags": [
+      "unit_suspect"
+    ]
+  },
+  {
+    "file": "doc_011.pdf",
+    "doc_type": "electricity_bill",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-05-01",
+    "period_end": "2026-05-31",
+    "activities": [
+      {
+        "quantity": "48350",
+        "unit": "KWH",
+        "category": "electricity",
+        "fuel_or_material": null,
+        "expected_factor_hint": "india grid electricity",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 4,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_012.pdf",
+    "doc_type": "fuel_receipt",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-02-22",
+    "period_end": "2026-02-22",
+    "activities": [
+      {
+        "quantity": "1302",
+        "unit": "litres",
+        "category": "fuel",
+        "fuel_or_material": "petrol",
+        "expected_factor_hint": "petrol",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 3,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_013.pdf",
+    "doc_type": "electricity_bill",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-04-01",
+    "period_end": "2026-04-30",
+    "activities": [
+      {
+        "quantity": "51650",
+        "unit": "KWH",
+        "category": "electricity",
+        "fuel_or_material": null,
+        "expected_factor_hint": "india grid electricity",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 3,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_014.pdf",
+    "doc_type": "fuel_receipt",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-10-24",
+    "period_end": "2026-10-24",
+    "activities": [
+      {
+        "quantity": "2086",
+        "unit": "litres",
+        "category": "fuel",
+        "fuel_or_material": "petrol",
+        "expected_factor_hint": "petrol",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 2,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_015.pdf",
+    "doc_type": "electricity_bill",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-04-01",
+    "period_end": "2026-04-30",
+    "activities": [
+      {
+        "quantity": "124500",
+        "unit": "kWh",
+        "category": "electricity",
+        "fuel_or_material": null,
+        "expected_factor_hint": "india grid electricity",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 4,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_016.pdf",
+    "doc_type": "freight_invoice",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-06-16",
+    "period_end": "2026-06-16",
+    "activities": [
+      {
+        "quantity": "4940",
+        "unit": "tkm",
+        "category": "freight",
+        "fuel_or_material": null,
+        "expected_factor_hint": "road freight tonne-km",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 2,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_017.pdf",
+    "doc_type": "freight_invoice",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-03-21",
+    "period_end": "2026-03-21",
+    "activities": [
+      {
+        "quantity": "8260",
+        "unit": "tkm",
+        "category": "freight",
+        "fuel_or_material": null,
+        "expected_factor_hint": "road freight tonne-km",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 3,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_018.pdf",
+    "doc_type": "supplier_invoice",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-07-02",
+    "period_end": "2026-07-02",
+    "activities": [
+      {
+        "quantity": "1975",
+        "unit": "SCM",
+        "category": "fuel",
+        "fuel_or_material": "natural gas",
+        "expected_factor_hint": "natural gas",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 1,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_019.pdf",
+    "doc_type": "electricity_bill",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-10-01",
+    "period_end": "2026-10-31",
+    "activities": [
+      {
+        "quantity": "39500",
+        "unit": "units",
+        "category": "electricity",
+        "fuel_or_material": null,
+        "expected_factor_hint": "india grid electricity",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 3,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_020.pdf",
+    "doc_type": "supplier_invoice",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-11-01",
+    "period_end": "2026-11-01",
+    "activities": [
+      {
+        "quantity": "8400",
+        "unit": "SCM",
+        "category": "fuel",
+        "fuel_or_material": "natural gas",
+        "expected_factor_hint": "natural gas",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 1,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_021.pdf",
+    "doc_type": "electricity_bill",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-06-01",
+    "period_end": "2026-06-30",
+    "activities": [
+      {
+        "quantity": "124000",
+        "unit": "MWh",
+        "category": "electricity",
+        "fuel_or_material": null,
+        "expected_factor_hint": "india grid electricity",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 3,
+    "expected_flags": [
+      "unit_suspect"
+    ]
+  },
+  {
+    "file": "doc_022.pdf",
+    "doc_type": "electricity_bill",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-01-01",
+    "period_end": "2026-01-31",
+    "activities": [
+      {
+        "quantity": "80950",
+        "unit": "KWH",
+        "category": "electricity",
+        "fuel_or_material": null,
+        "expected_factor_hint": "india grid electricity",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 3,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_023.pdf",
+    "doc_type": "electricity_bill",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-05-01",
+    "period_end": "2026-05-31",
+    "activities": [
+      {
+        "quantity": "39800",
+        "unit": "units",
+        "category": "electricity",
+        "fuel_or_material": null,
+        "expected_factor_hint": "india grid electricity",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 3,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_024.pdf",
+    "doc_type": "electricity_bill",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-03-01",
+    "period_end": "2026-03-31",
+    "activities": [
+      {
+        "quantity": "73450",
+        "unit": "MWh",
+        "category": "electricity",
+        "fuel_or_material": null,
+        "expected_factor_hint": "india grid electricity",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 3,
+    "expected_flags": [
+      "unit_suspect"
+    ]
+  },
+  {
+    "file": "doc_025.pdf",
+    "doc_type": "electricity_bill",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2025-11-01",
+    "period_end": "2026-12-31",
+    "activities": [
+      {
+        "quantity": "171400",
+        "unit": "units",
+        "category": "electricity",
+        "fuel_or_material": null,
+        "expected_factor_hint": "india grid electricity",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 3,
+    "expected_flags": [
+      "period_too_long",
+      "future_date"
+    ]
+  },
+  {
+    "file": "doc_026.pdf",
+    "doc_type": "electricity_bill",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-03-01",
+    "period_end": "2026-03-31",
+    "activities": [
+      {
+        "quantity": "104050",
+        "unit": "units",
+        "category": "electricity",
+        "fuel_or_material": null,
+        "expected_factor_hint": "india grid electricity",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 3,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_027.pdf",
+    "doc_type": "fuel_receipt",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-11-05",
+    "period_end": "2026-11-05",
+    "activities": [
+      {
+        "quantity": "804.2",
+        "unit": "litres",
+        "category": "fuel",
+        "fuel_or_material": "diesel",
+        "expected_factor_hint": "diesel",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 2,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_028.pdf",
+    "doc_type": "electricity_bill",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-04-01",
+    "period_end": "2026-04-30",
+    "activities": [
+      {
+        "quantity": "21100",
+        "unit": "kWh",
+        "category": "electricity",
+        "fuel_or_material": null,
+        "expected_factor_hint": "india grid electricity",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 4,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_029.pdf",
+    "doc_type": "supplier_invoice",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-10-05",
+    "period_end": "2026-10-05",
+    "activities": [
+      {
+        "quantity": "513",
+        "unit": "kg",
+        "category": "fuel",
+        "fuel_or_material": "lpg",
+        "expected_factor_hint": "lpg",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 1,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_030.pdf",
+    "doc_type": "fuel_receipt",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-10-16",
+    "period_end": "2026-10-16",
+    "activities": [
+      {
+        "quantity": "1106",
+        "unit": "litres",
+        "category": "fuel",
+        "fuel_or_material": "petrol",
+        "expected_factor_hint": "petrol",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 2,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_031.pdf",
+    "doc_type": "electricity_bill",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-01-01",
+    "period_end": "2026-01-31",
+    "activities": [
+      {
+        "quantity": "138200",
+        "unit": "units",
+        "category": "electricity",
+        "fuel_or_material": null,
+        "expected_factor_hint": "india grid electricity",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 3,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_032.pdf",
+    "doc_type": "freight_invoice",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-10-10",
+    "period_end": "2026-10-10",
+    "activities": [
+      {
+        "quantity": "3410",
+        "unit": "tkm",
+        "category": "freight",
+        "fuel_or_material": null,
+        "expected_factor_hint": "road freight tonne-km",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 2,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_033.pdf",
+    "doc_type": "freight_invoice",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-07-14",
+    "period_end": "2026-07-14",
+    "activities": [
+      {
+        "quantity": "7420",
+        "unit": "tkm",
+        "category": "freight",
+        "fuel_or_material": null,
+        "expected_factor_hint": "road freight tonne-km",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 3,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_034.pdf",
+    "doc_type": "freight_invoice",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-12-17",
+    "period_end": "2026-12-17",
+    "activities": [
+      {
+        "quantity": "540",
+        "unit": "tkm",
+        "category": "freight",
+        "fuel_or_material": null,
+        "expected_factor_hint": "road freight tonne-km",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 3,
+    "expected_flags": [
+      "future_date"
+    ]
+  },
+  {
+    "file": "doc_035.pdf",
+    "doc_type": "electricity_bill",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-06-01",
+    "period_end": "2026-06-30",
+    "activities": [
+      {
+        "quantity": "96350",
+        "unit": "units",
+        "category": "electricity",
+        "fuel_or_material": null,
+        "expected_factor_hint": "india grid electricity",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 3,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_036.pdf",
+    "doc_type": "fuel_receipt",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-08-17",
+    "period_end": "2026-08-17",
+    "activities": [
+      {
+        "quantity": "639",
+        "unit": "L",
+        "category": "fuel",
+        "fuel_or_material": "petrol",
+        "expected_factor_hint": "petrol",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 2,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_037.pdf",
+    "doc_type": "fuel_receipt",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-11-01",
+    "period_end": "2026-11-01",
+    "activities": [
+      {
+        "quantity": "632",
+        "unit": "litres",
+        "category": "fuel",
+        "fuel_or_material": "petrol",
+        "expected_factor_hint": "petrol",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 2,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_038.pdf",
+    "doc_type": "supplier_invoice",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-04-16",
+    "period_end": "2026-04-16",
+    "activities": [
+      {
+        "quantity": "4200",
+        "unit": "SCM",
+        "category": "fuel",
+        "fuel_or_material": "natural gas",
+        "expected_factor_hint": "natural gas",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 1,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_039.pdf",
+    "doc_type": "electricity_bill",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-08-01",
+    "period_end": "2026-08-31",
+    "activities": [
+      {
+        "quantity": "54000",
+        "unit": "units",
+        "category": "electricity",
+        "fuel_or_material": null,
+        "expected_factor_hint": "india grid electricity",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 3,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_040.pdf",
+    "doc_type": "electricity_bill",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-08-01",
+    "period_end": "2026-08-31",
+    "activities": [
+      {
+        "quantity": "50050",
+        "unit": "units",
+        "category": "electricity",
+        "fuel_or_material": null,
+        "expected_factor_hint": "india grid electricity",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 4,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_041.pdf",
+    "doc_type": "freight_invoice",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-10-23",
+    "period_end": "2026-10-23",
+    "activities": [
+      {
+        "quantity": "4500",
+        "unit": "tkm",
+        "category": "freight",
+        "fuel_or_material": null,
+        "expected_factor_hint": "road freight tonne-km",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 2,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_042.pdf",
+    "doc_type": "fuel_receipt",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-03-07",
+    "period_end": "2026-03-07",
+    "activities": [
+      {
+        "quantity": "879",
+        "unit": "litres",
+        "category": "fuel",
+        "fuel_or_material": "diesel",
+        "expected_factor_hint": "diesel",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 3,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_043.pdf",
+    "doc_type": "electricity_bill",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-09-01",
+    "period_end": "2026-09-30",
+    "activities": [
+      {
+        "quantity": "137900",
+        "unit": "kWh",
+        "category": "electricity",
+        "fuel_or_material": null,
+        "expected_factor_hint": "india grid electricity",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 3,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_044.pdf",
+    "doc_type": "freight_invoice",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-06-23",
+    "period_end": "2026-06-23",
+    "activities": [
+      {
+        "quantity": "9860",
+        "unit": "tkm",
+        "category": "freight",
+        "fuel_or_material": null,
+        "expected_factor_hint": "road freight tonne-km",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 3,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_045.pdf",
+    "doc_type": "supplier_invoice",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-07-13",
+    "period_end": "2026-07-13",
+    "activities": [
+      {
+        "quantity": "8725",
+        "unit": "SCM",
+        "category": "fuel",
+        "fuel_or_material": "natural gas",
+        "expected_factor_hint": "natural gas",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 1,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_046.pdf",
+    "doc_type": "supplier_invoice",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-12-14",
+    "period_end": "2026-12-14",
+    "activities": [
+      {
+        "quantity": "4800",
+        "unit": "SCM",
+        "category": "fuel",
+        "fuel_or_material": "natural gas",
+        "expected_factor_hint": "natural gas",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 2,
+    "expected_flags": [
+      "future_date"
+    ]
+  },
+  {
+    "file": "doc_047.pdf",
+    "doc_type": "electricity_bill",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-01-01",
+    "period_end": "2026-01-31",
+    "activities": [
+      {
+        "quantity": "113750",
+        "unit": "kWh",
+        "category": "electricity",
+        "fuel_or_material": null,
+        "expected_factor_hint": "india grid electricity",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 4,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_048.pdf",
+    "doc_type": "fuel_receipt",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-04-14",
+    "period_end": "2026-04-14",
+    "activities": [
+      {
+        "quantity": "492",
+        "unit": "Ltr",
+        "category": "fuel",
+        "fuel_or_material": "diesel",
+        "expected_factor_hint": "diesel",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 3,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_049.pdf",
+    "doc_type": "freight_invoice",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-05-27",
+    "period_end": "2026-05-27",
+    "activities": [
+      {
+        "quantity": "25960",
+        "unit": "tkm",
+        "category": "freight",
+        "fuel_or_material": null,
+        "expected_factor_hint": "road freight tonne-km",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 3,
+    "expected_flags": []
+  },
+  {
+    "file": "doc_050.pdf",
+    "doc_type": "electricity_bill",
+    "currency": "INR",
+    "country": "IN",
+    "period_start": "2026-10-01",
+    "period_end": "2026-10-31",
+    "activities": [
+      {
+        "quantity": "91650",
+        "unit": "kWh",
+        "category": "electricity",
+        "fuel_or_material": null,
+        "expected_factor_hint": "india grid electricity",
+        "kg_co2e_hint": null
+      }
+    ],
+    "charges": 4,
+    "expected_flags": []
+  }
+]

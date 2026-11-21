@@ -1,0 +1,115 @@
+{
+ "seconds": 9.1,
+ "model": "gemini-3.1-flash-lite",
+ "attempts": [
+  {
+   "model": "gemini-3.6-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.5-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.1-flash-lite",
+   "ok": true,
+   "seconds": 4.14
+  }
+ ],
+ "document": {
+  "doc_type": "fuel_receipt",
+  "supplier": "Vindhya Energy Retail",
+  "invoice_number": "FU-66635",
+  "invoice_date": "2026-07-11",
+  "period_start": null,
+  "period_end": null,
+  "currency": "INR",
+  "country": "IN",
+  "line_items": [
+   {
+    "description": "Motor spirit (petrol)",
+    "quantity": "654.2",
+    "unit": "Ltr",
+    "amount": "66388.75",
+    "category": "fuel",
+    "is_activity": true,
+    "fuel_or_material": "petrol",
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     233,
+     94,
+     245,
+     223
+    ],
+    "confidence": 1.0
+   },
+   {
+    "description": "CGST @ 9%",
+    "quantity": null,
+    "unit": null,
+    "amount": "5974.99",
+    "category": "other",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     251,
+     94,
+     263,
+     175
+    ],
+    "confidence": 1.0
+   },
+   {
+    "description": "SGST @ 9%",
+    "quantity": null,
+    "unit": null,
+    "amount": "5974.99",
+    "category": "other",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     269,
+     94,
+     281,
+     175
+    ],
+    "confidence": 1.0
+   }
+  ]
+ },
+ "flags": [],
+ "lines": [
+  {
+   "line_index": 0,
+   "factor_id": "desnz-2026:1_101_1018_8_1",
+   "method": "model",
+   "shortlist": [
+    "desnz-2026:1_101_1018_8_1",
+    "desnz-2026:11_101_1018_8_1",
+    "desnz-2026:1_101_1008_8_1"
+   ],
+   "kg_co2e": "1539.803624"
+  }
+ ]
+}

@@ -1,0 +1,136 @@
+{
+ "seconds": 7.6,
+ "model": "gemini-3.1-flash-lite",
+ "attempts": [
+  {
+   "model": "gemini-3.6-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.5-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.1-flash-lite",
+   "ok": true,
+   "seconds": 2.95
+  }
+ ],
+ "document": {
+  "doc_type": "fuel_receipt",
+  "supplier": "Sagarkinara Petro Station",
+  "invoice_number": "FU-45037",
+  "invoice_date": "2026-03-07",
+  "period_start": null,
+  "period_end": null,
+  "currency": "INR",
+  "country": "IN",
+  "line_items": [
+   {
+    "description": "High speed diesel",
+    "quantity": "879",
+    "unit": "litres",
+    "amount": "82140.05",
+    "category": "fuel",
+    "is_activity": true,
+    "fuel_or_material": "diesel",
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     256,
+     294,
+     268,
+     415
+    ],
+    "confidence": 1.0
+   },
+   {
+    "description": "CGST @ 9%",
+    "quantity": null,
+    "unit": null,
+    "amount": "7392.60",
+    "category": "fuel",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     281,
+     294,
+     293,
+     378
+    ],
+    "confidence": 1.0
+   },
+   {
+    "description": "SGST @ 9%",
+    "quantity": null,
+    "unit": null,
+    "amount": "7392.60",
+    "category": "fuel",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     306,
+     294,
+     318,
+     378
+    ],
+    "confidence": 1.0
+   },
+   {
+    "description": "Delivery charge",
+    "quantity": null,
+    "unit": null,
+    "amount": "400.00",
+    "category": "fuel",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     327,
+     294,
+     339,
+     398
+    ],
+    "confidence": 1.0
+   }
+  ]
+ },
+ "flags": [],
+ "lines": [
+  {
+   "line_index": 0,
+   "factor_id": "desnz-2026:1_101_1012_8_1",
+   "method": "model",
+   "shortlist": [
+    "desnz-2026:1_101_1012_8_1",
+    "desnz-2026:11_101_1012_8_1",
+    "desnz-2026:1_101_1011_8_1"
+   ],
+   "kg_co2e": "2339.502450"
+  }
+ ]
+}
