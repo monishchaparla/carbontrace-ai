@@ -1,0 +1,120 @@
+{
+ "seconds": 2.7,
+ "model": "gemini-3.1-flash-lite",
+ "attempts": [
+  {
+   "model": "gemini-3.6-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.5-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.1-flash-lite",
+   "ok": true,
+   "seconds": 2.08
+  }
+ ],
+ "document": {
+  "doc_type": "electricity_bill",
+  "supplier": "Deccan Grid Services",
+  "invoice_number": "BL/2026/98931",
+  "invoice_date": "2026-03-28",
+  "period_start": "2026-03-01",
+  "period_end": "2026-03-31",
+  "currency": "INR",
+  "country": "IN",
+  "line_items": [
+   {
+    "description": "Energy consumed",
+    "quantity": "178200",
+    "unit": "MWh",
+    "amount": "1519576.08",
+    "category": "electricity",
+    "is_activity": true,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": null,
+    "confidence": 1.0
+   },
+   {
+    "description": "Fixed / demand charges (360 kVA)",
+    "quantity": "360",
+    "unit": "kVA",
+    "amount": "150750.80",
+    "category": "electricity",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": null,
+    "confidence": 1.0
+   },
+   {
+    "description": "Electricity duty",
+    "quantity": null,
+    "unit": null,
+    "amount": "113968.21",
+    "category": "electricity",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": null,
+    "confidence": 1.0
+   },
+   {
+    "description": "Fuel adjustment charge",
+    "quantity": "178200",
+    "unit": "MWh",
+    "amount": "67930.71",
+    "category": "electricity",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": null,
+    "confidence": 1.0
+   }
+  ]
+ },
+ "flags": [
+  {
+   "code": "unit_suspect",
+   "message": "Unit reads MWh, but the price works out to \u20b90.01 per kWh. Check kWh vs MWh.",
+   "line_index": 0
+  }
+ ],
+ "lines": [
+  {
+   "line_index": 0,
+   "factor_id": "cea-v22:india-grid-fy2025-26",
+   "method": "rule",
+   "shortlist": [
+    "cea-v22:india-grid-fy2025-26"
+   ],
+   "kg_co2e": "120285000.000000"
+  }
+ ]
+}

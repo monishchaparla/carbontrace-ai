@@ -1,0 +1,121 @@
+{
+ "seconds": 9.3,
+ "model": "gemini-3.1-flash-lite",
+ "attempts": [
+  {
+   "model": "gemini-3.6-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.5-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.1-flash-lite",
+   "ok": true,
+   "seconds": 2.81
+  }
+ ],
+ "document": {
+  "doc_type": "freight_invoice",
+  "supplier": "Pinaka Logistics (fictional)",
+  "invoice_number": "RF/33899",
+  "invoice_date": "2026-12-15",
+  "period_start": null,
+  "period_end": null,
+  "currency": "INR",
+  "country": "IN",
+  "line_items": [
+   {
+    "description": "Road freight Mumbai to Ahmedabad",
+    "quantity": "13250",
+    "unit": "tkm",
+    "amount": "38084.52",
+    "category": "freight",
+    "is_activity": true,
+    "fuel_or_material": null,
+    "origin": "Mumbai",
+    "destination": "Ahmedabad",
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     298,
+     93,
+     312,
+     386
+    ],
+    "confidence": 0.95
+   },
+   {
+    "description": "Loading / unloading",
+    "quantity": null,
+    "unit": null,
+    "amount": "4000.00",
+    "category": "freight",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     319,
+     93,
+     333,
+     268
+    ],
+    "confidence": 0.95
+   },
+   {
+    "description": "GST @ 5%",
+    "quantity": null,
+    "unit": null,
+    "amount": "1904.23",
+    "category": "freight",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     341,
+     93,
+     355,
+     185
+    ],
+    "confidence": 0.95
+   }
+  ]
+ },
+ "flags": [
+  {
+   "code": "future_date",
+   "message": "Invoice date is in the future.",
+   "line_index": null
+  }
+ ],
+ "lines": [
+  {
+   "line_index": 0,
+   "factor_id": "desnz-2026:27_304_3132_14_1",
+   "method": "model",
+   "shortlist": [
+    "desnz-2026:27_306_3132_14_1",
+    "desnz-2026:27_306_3130_14_1",
+    "desnz-2026:27_306_3131_14_1"
+   ],
+   "kg_co2e": "1038.137500"
+  }
+ ]
+}

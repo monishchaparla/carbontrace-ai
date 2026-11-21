@@ -1,0 +1,136 @@
+{
+ "seconds": 15.8,
+ "model": "gemini-3.1-flash-lite",
+ "attempts": [
+  {
+   "model": "gemini-3.6-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.5-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.1-flash-lite",
+   "ok": true,
+   "seconds": 5.78
+  }
+ ],
+ "document": {
+  "doc_type": "fuel_receipt",
+  "supplier": "Aravali Fuel Stop",
+  "invoice_number": "FU-50466",
+  "invoice_date": "2026-03-18",
+  "period_start": null,
+  "period_end": null,
+  "currency": "INR",
+  "country": "IN",
+  "line_items": [
+   {
+    "description": "Motor spirit (petrol)",
+    "quantity": "762.8",
+    "unit": "Ltr",
+    "amount": "76771.84",
+    "category": "fuel",
+    "is_activity": true,
+    "fuel_or_material": "petrol",
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     233,
+     95,
+     246,
+     856
+    ],
+    "confidence": 1.0
+   },
+   {
+    "description": "CGST @ 9%",
+    "quantity": null,
+    "unit": null,
+    "amount": "6909.47",
+    "category": "other",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     247,
+     95,
+     260,
+     856
+    ],
+    "confidence": 1.0
+   },
+   {
+    "description": "SGST @ 9%",
+    "quantity": null,
+    "unit": null,
+    "amount": "6909.47",
+    "category": "other",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     261,
+     95,
+     274,
+     856
+    ],
+    "confidence": 1.0
+   },
+   {
+    "description": "Delivery charge",
+    "quantity": null,
+    "unit": null,
+    "amount": "400.00",
+    "category": "other",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     275,
+     95,
+     288,
+     856
+    ],
+    "confidence": 1.0
+   }
+  ]
+ },
+ "flags": [],
+ "lines": [
+  {
+   "line_index": 0,
+   "factor_id": "desnz-2026:1_101_1018_8_1",
+   "method": "model",
+   "shortlist": [
+    "desnz-2026:1_101_1018_8_1",
+    "desnz-2026:11_101_1018_8_1",
+    "desnz-2026:1_101_1008_8_1"
+   ],
+   "kg_co2e": "1795.417616"
+  }
+ ]
+}

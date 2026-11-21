@@ -1,0 +1,94 @@
+{
+ "seconds": 157.8,
+ "model": "gemini-3.1-flash-lite",
+ "attempts": [
+  {
+   "model": "gemini-3.6-flash",
+   "ok": false,
+   "error": "ServerError"
+  },
+  {
+   "model": "gemini-3.5-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "ok": false,
+   "error": "ServerError"
+  },
+  {
+   "model": "gemini-3.1-flash-lite",
+   "ok": true,
+   "seconds": 2.09
+  }
+ ],
+ "document": {
+  "doc_type": "supplier_invoice",
+  "supplier": "Tarang Gas Agency",
+  "invoice_number": "GS-60221",
+  "invoice_date": "2026-03-02",
+  "period_start": null,
+  "period_end": null,
+  "currency": "INR",
+  "country": "IN",
+  "line_items": [
+   {
+    "description": "Commercial LPG supply",
+    "quantity": "874",
+    "unit": "kg",
+    "amount": "88453.84",
+    "category": "fuel",
+    "is_activity": true,
+    "fuel_or_material": "LPG",
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     163,
+     94,
+     176,
+     857
+    ],
+    "confidence": 1.0
+   },
+   {
+    "description": "GST @ 5%",
+    "quantity": null,
+    "unit": null,
+    "amount": "4422.69",
+    "category": "other",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     184,
+     94,
+     197,
+     857
+    ],
+    "confidence": 1.0
+   }
+  ]
+ },
+ "flags": [],
+ "lines": [
+  {
+   "line_index": 0,
+   "factor_id": "desnz-2026:1_100_1003_15_1",
+   "method": "model",
+   "shortlist": [
+    "desnz-2026:1_100_1003_15_1",
+    "desnz-2026:11_100_1003_15_1",
+    "desnz-2026:20_507_5313_15_1"
+   ],
+   "kg_co2e": "2569.001470"
+  }
+ ]
+}

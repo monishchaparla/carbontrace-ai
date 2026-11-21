@@ -1,0 +1,121 @@
+{
+ "seconds": 6.5,
+ "model": "gemini-3.1-flash-lite",
+ "attempts": [
+  {
+   "model": "gemini-3.6-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.5-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.1-flash-lite",
+   "ok": true,
+   "seconds": 2.65
+  }
+ ],
+ "document": {
+  "doc_type": "supplier_invoice",
+  "supplier": "Meghdoot Gas Supply",
+  "invoice_number": "GS-77756",
+  "invoice_date": "2026-12-25",
+  "period_start": null,
+  "period_end": null,
+  "currency": "INR",
+  "country": "IN",
+  "line_items": [
+   {
+    "description": "Piped natural gas supply",
+    "quantity": "4500",
+    "unit": "SCM",
+    "amount": "266390.12",
+    "category": "fuel",
+    "is_activity": true,
+    "fuel_or_material": "natural gas",
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     164,
+     95,
+     175,
+     858
+    ],
+    "confidence": 1.0
+   },
+   {
+    "description": "GST @ 18%",
+    "quantity": null,
+    "unit": null,
+    "amount": "47950.22",
+    "category": "other",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     187,
+     95,
+     198,
+     858
+    ],
+    "confidence": 1.0
+   },
+   {
+    "description": "Delivery / regulator rent",
+    "quantity": null,
+    "unit": null,
+    "amount": "350.00",
+    "category": "other",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     210,
+     95,
+     221,
+     858
+    ],
+    "confidence": 1.0
+   }
+  ]
+ },
+ "flags": [
+  {
+   "code": "future_date",
+   "message": "Invoice date is in the future.",
+   "line_index": null
+  }
+ ],
+ "lines": [
+  {
+   "line_index": 0,
+   "factor_id": "desnz-2026:1_100_1004_1_1",
+   "method": "model",
+   "shortlist": [
+    "desnz-2026:1_100_1004_1_1",
+    "desnz-2026:11_100_1004_1_1",
+    "desnz-2026:1_100_1005_1_1"
+   ],
+   "kg_co2e": "9118.485000"
+  }
+ ]
+}

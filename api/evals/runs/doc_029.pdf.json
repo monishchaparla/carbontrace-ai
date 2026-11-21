@@ -1,0 +1,136 @@
+{
+ "seconds": 9.1,
+ "model": "gemini-3.1-flash-lite",
+ "attempts": [
+  {
+   "model": "gemini-3.6-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.5-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.1-flash-lite",
+   "ok": true,
+   "seconds": 2.14
+  }
+ ],
+ "document": {
+  "doc_type": "freight_invoice",
+  "supplier": "Kesari Freight Movers",
+  "invoice_number": "RF/23852",
+  "invoice_date": "2026-08-11",
+  "period_start": null,
+  "period_end": null,
+  "currency": "INR",
+  "country": "IN",
+  "line_items": [
+   {
+    "description": "Road freight Lucknow to Kanpur",
+    "quantity": "1350",
+    "unit": "tkm",
+    "amount": "3861.75",
+    "category": "freight",
+    "is_activity": true,
+    "fuel_or_material": null,
+    "origin": "Lucknow",
+    "destination": "Kanpur",
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     163,
+     97,
+     176,
+     857
+    ],
+    "confidence": 0.95
+   },
+   {
+    "description": "Fuel surcharge",
+    "quantity": null,
+    "unit": null,
+    "amount": "231.71",
+    "category": "freight",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     186,
+     97,
+     199,
+     857
+    ],
+    "confidence": 0.95
+   },
+   {
+    "description": "Loading / unloading",
+    "quantity": null,
+    "unit": null,
+    "amount": "2500.00",
+    "category": "freight",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     209,
+     97,
+     222,
+     857
+    ],
+    "confidence": 0.95
+   },
+   {
+    "description": "GST @ 5%",
+    "quantity": null,
+    "unit": null,
+    "amount": "193.09",
+    "category": "freight",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     232,
+     97,
+     245,
+     857
+    ],
+    "confidence": 0.95
+   }
+  ]
+ },
+ "flags": [],
+ "lines": [
+  {
+   "line_index": 0,
+   "factor_id": "desnz-2026:27_304_3132_14_1",
+   "method": "model",
+   "shortlist": [
+    "desnz-2026:27_306_3132_14_1",
+    "desnz-2026:27_306_3130_14_1",
+    "desnz-2026:27_306_3131_14_1"
+   ],
+   "kg_co2e": "105.772500"
+  }
+ ]
+}

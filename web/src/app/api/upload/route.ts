@@ -1,16 +1,8 @@
-import { createHash, timingSafeEqual } from "node:crypto";
 import { NextResponse } from "next/server";
 import { apiFetch } from "@/lib/api";
+import { passcodeOk } from "@/lib/passcode";
 
 export const dynamic = "force-dynamic";
-
-// Public deployments set UPLOAD_PASSCODE so visitors can browse but not spend the extraction quota.
-function passcodeOk(given: string | null): boolean {
-  const expected = process.env.UPLOAD_PASSCODE;
-  if (!expected) return true;
-  const hash = (s: string) => createHash("sha256").update(s).digest();
-  return timingSafeEqual(hash(given ?? ""), hash(expected));
-}
 
 export async function POST(req: Request) {
   if (!passcodeOk(req.headers.get("x-upload-passcode"))) {

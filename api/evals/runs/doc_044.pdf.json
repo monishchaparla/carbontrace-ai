@@ -1,0 +1,145 @@
+{
+ "seconds": 4.6,
+ "model": "gemini-3.1-flash-lite",
+ "attempts": [
+  {
+   "model": "gemini-3.6-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.5-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.1-flash-lite",
+   "ok": true,
+   "seconds": 3.14
+  }
+ ],
+ "document": {
+  "doc_type": "electricity_bill",
+  "supplier": "Thar Urja Ltd",
+  "invoice_number": "BL/2026/41877",
+  "invoice_date": "2026-12-15",
+  "period_start": "2025-11-01",
+  "period_end": "2026-12-31",
+  "currency": "INR",
+  "country": "IN",
+  "line_items": [
+   {
+    "description": "Energy consumed",
+    "quantity": "135300",
+    "unit": "KWH",
+    "amount": "1141420.43",
+    "category": "electricity",
+    "is_activity": true,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     298,
+     94,
+     308,
+     200
+    ],
+    "confidence": 0.95
+   },
+   {
+    "description": "Fixed / demand charges (130 kVA)",
+    "quantity": "130",
+    "unit": "kVA",
+    "amount": "39369.37",
+    "category": "electricity",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     321,
+     94,
+     331,
+     285
+    ],
+    "confidence": 0.95
+   },
+   {
+    "description": "Electricity duty",
+    "quantity": null,
+    "unit": null,
+    "amount": "85606.53",
+    "category": "electricity",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     344,
+     94,
+     354,
+     185
+    ],
+    "confidence": 0.95
+   },
+   {
+    "description": "Fuel adjustment charge",
+    "quantity": "135300",
+    "unit": "KWH",
+    "amount": "43606.46",
+    "category": "electricity",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     367,
+     94,
+     377,
+     225
+    ],
+    "confidence": 0.95
+   }
+  ]
+ },
+ "flags": [
+  {
+   "code": "period_too_long",
+   "message": "Date range spans 14 months.",
+   "line_index": null
+  },
+  {
+   "code": "future_date",
+   "message": "Invoice date is in the future.",
+   "line_index": null
+  }
+ ],
+ "lines": [
+  {
+   "line_index": 0,
+   "factor_id": "cea-v22:india-grid-fy2025-26",
+   "method": "rule",
+   "shortlist": [
+    "cea-v22:india-grid-fy2025-26"
+   ],
+   "kg_co2e": "91327.500000"
+  }
+ ]
+}

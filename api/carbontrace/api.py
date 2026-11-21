@@ -36,6 +36,13 @@ app.add_middleware(
 
 UPLOADS.mkdir(parents=True, exist_ok=True)
 conn = store.connect(DB_PATH)
+# Serverless: the database lives in /tmp and starts empty, so refill it from the committed benchmark outputs.
+if os.environ.get("CARBONTRACE_SEED_DEMO") == "1" and not store.list_documents(conn):
+    from carbontrace.demo import seed
+
+    seed(conn)
+# Serverless platforms may freeze background work after the response, so process inside the request there.
+SYNC = os.environ.get("CARBONTRACE_SYNC") == "1"
 
 API_KEY = os.environ.get("CARBONTRACE_API_KEY", "")
 DEV_NO_AUTH = os.environ.get("CARBONTRACE_DEV") == "1"
@@ -86,7 +93,10 @@ async def upload(file: UploadFile, background: BackgroundTasks) -> dict:
     path.write_bytes(data)
     name = Path(file.filename or "upload").name[:200]
     doc_id = store.create_document(conn, name, mime, sha, str(path))
-    background.add_task(process_file, doc_id, path, mime)
+    if SYNC:
+        process_file(doc_id, path, mime)
+    else:
+        background.add_task(process_file, doc_id, path, mime)
     return {"id": doc_id, "duplicate": False}
 
 
@@ -108,7 +118,10 @@ def document_file(doc_id: str) -> FileResponse:
     row = conn.execute("SELECT path, mime FROM documents WHERE id = ?", (doc_id,)).fetchone()
     if row is None:
         raise HTTPException(404, "Document not found.")
-    return FileResponse(row["path"], media_type=row["mime"])
+    path = Path(row["path"])
+    if not path.is_absolute():  # seeded demo documents are stored relative to api/
+        path = DATA.parent / path
+    return FileResponse(path, media_type=row["mime"])
 
 
 class Review(BaseModel):

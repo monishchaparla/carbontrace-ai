@@ -174,9 +174,12 @@ def get_document(conn: sqlite3.Connection, doc_id: str) -> dict | None:
 def summary(conn: sqlite3.Connection) -> dict:
     """Totals in tonnes for the dashboard. Month comes from the period end, else the invoice date, else upload date."""
     rows = conn.execute(
-        "SELECT d.id, d.filename, d.uploaded_at, d.doc_json, l.scope, l.factor_name, l.kg_co2e "
+        "SELECT d.id, d.filename, d.uploaded_at, d.doc_json, d.needs_review, l.scope, l.factor_name, l.kg_co2e "
         "FROM line_results l JOIN documents d ON d.id = l.document_id WHERE d.status='done' AND l.kg_co2e IS NOT NULL"
     ).fetchall()
+    # Flagged documents are not counted until a reviewer clears them (a kWh/MWh misprint is off by 1000x).
+    pending = sum((Decimal(r["kg_co2e"]) for r in rows if r["needs_review"]), Decimal(0))
+    rows = [r for r in rows if not r["needs_review"]]
     by_scope = {1: Decimal(0), 2: Decimal(0), 3: Decimal(0)}
     monthly: dict[str, dict[int, Decimal]] = {}
     sources: dict[tuple[str, str, int], Decimal] = {}
@@ -203,5 +206,6 @@ def summary(conn: sqlite3.Connection) -> dict:
             for (name, site, scope), kg in sorted(sources.items(), key=lambda kv: kv[1], reverse=True)[:5]
         ],
         "review_count": review,
+        "pending_review_t": t(pending),
         "documents": conn.execute("SELECT COUNT(*) FROM documents").fetchone()[0],
     }

@@ -6,7 +6,7 @@ import pytest
 from fastapi.testclient import TestClient
 
 from carbontrace.pipeline import LineResult, PipelineResult
-from carbontrace.schema import DocType, ExtractedDocument
+from carbontrace.schema import DocType, ExtractedDocument, Flag
 
 PDF = b"%PDF-1.4 fake test file"
 
@@ -71,6 +71,24 @@ def test_audit_log_is_append_only(client):
         api.conn.execute("DELETE FROM audit_log")
     with pytest.raises(sqlite3.IntegrityError):
         api.conn.execute("UPDATE audit_log SET event='x'")
+
+
+def test_flagged_documents_stay_out_of_totals_until_reviewed(client, monkeypatch):
+    c, api = client
+    original = api.pipeline.process
+
+    def flagged(data, mime):
+        r = original(data, mime)
+        r.flags.append(Flag(code="unit_suspect", message="x"))
+        return r
+
+    monkeypatch.setattr(api.pipeline, "process", flagged)
+    doc_id = c.post("/documents", files={"file": ("bill.pdf", PDF, "application/pdf")}).json()["id"]
+    s = c.get("/summary").json()
+    assert s["total_t"] == 0 and s["pending_review_t"] == 16.538 and s["review_count"] == 1
+    c.post(f"/documents/{doc_id}/review", json={"note": "checked"})
+    s = c.get("/summary").json()
+    assert s["total_t"] == 16.538 and s["pending_review_t"] == 0
 
 
 def test_review_clears_flag_and_is_audited(client):

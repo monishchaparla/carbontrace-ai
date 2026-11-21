@@ -1,0 +1,124 @@
+{
+ "seconds": 76.4,
+ "model": "gemini-3.5-flash",
+ "attempts": [
+  {
+   "model": "gemini-3.6-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.5-flash",
+   "ok": true,
+   "seconds": 72.92
+  }
+ ],
+ "document": {
+  "doc_type": "electricity_bill",
+  "supplier": "Malwa Electric Supply Ltd",
+  "invoice_number": "BL/2026/93284",
+  "invoice_date": "2026-10-28",
+  "period_start": "2026-10-01",
+  "period_end": "2026-10-31",
+  "currency": "INR",
+  "country": "IN",
+  "line_items": [
+   {
+    "description": "Energy consumed",
+    "quantity": "124500",
+    "unit": "KWH",
+    "amount": "1131398.88",
+    "category": "electricity",
+    "is_activity": true,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     298,
+     93,
+     311,
+     807
+    ],
+    "confidence": 0.99
+   },
+   {
+    "description": "Fixed / demand charges (80 kVA)",
+    "quantity": "80",
+    "unit": "kVA",
+    "amount": "26974.05",
+    "category": "electricity",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     321,
+     93,
+     333,
+     807
+    ],
+    "confidence": 0.99
+   },
+   {
+    "description": "Electricity duty",
+    "quantity": null,
+    "unit": null,
+    "amount": "84854.92",
+    "category": "electricity",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     344,
+     94,
+     357,
+     655
+    ],
+    "confidence": 0.99
+   },
+   {
+    "description": "Fuel adjustment charge",
+    "quantity": "124500",
+    "unit": "KWH",
+    "amount": "60547.14",
+    "category": "electricity",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     367,
+     94,
+     380,
+     808
+    ],
+    "confidence": 0.99
+   }
+  ]
+ },
+ "flags": [],
+ "lines": [
+  {
+   "line_index": 0,
+   "factor_id": "cea-v22:india-grid-fy2025-26",
+   "method": "rule",
+   "shortlist": [
+    "cea-v22:india-grid-fy2025-26"
+   ],
+   "kg_co2e": "84037.500000"
+  }
+ ]
+}

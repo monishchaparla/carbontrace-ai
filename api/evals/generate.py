@@ -8,6 +8,7 @@ All companies are invented; every page footer says it is a sample for software t
 from __future__ import annotations
 
 import json
+import sys
 import random
 import re
 from calendar import monthrange
@@ -263,8 +264,13 @@ def render(path: Path, spec: dict, rng: random.Random) -> None:
 
 
 def main() -> None:
-    rng = random.Random(2026)
-    DOCS.mkdir(parents=True, exist_ok=True)
+    # --seed N --set NAME writes a separate held-out set to evals/NAME/ (same mix, different documents).
+    args = sys.argv[1:]
+    seed = int(args[args.index("--seed") + 1]) if "--seed" in args else 2026
+    base = HERE / args[args.index("--set") + 1] if "--set" in args else HERE
+    docs = base / "docs"
+    rng = random.Random(seed)
+    docs.mkdir(parents=True, exist_ok=True)
     mwh_idx = set(rng.sample(range(18), 3))
     builders = (
         [lambda i=i: electricity(rng, mwh=i in mwh_idx) for i in range(18)]
@@ -279,10 +285,10 @@ def main() -> None:
     for n, build in enumerate(builders, 1):
         spec, gt = build()
         name = f"doc_{n:03d}.pdf"
-        render(DOCS / name, spec, rng)
+        render(docs / name, spec, rng)
         entries.append({"file": name, **gt})
-    (HERE / "ground_truth.json").write_text(json.dumps(entries, indent=2), encoding="utf-8")
-    print(f"wrote {len(entries)} docs to {DOCS}")
+    (base / "ground_truth.json").write_text(json.dumps(entries, indent=2), encoding="utf-8")
+    print(f"wrote {len(entries)} docs to {docs}")
 
 
 if __name__ == "__main__":

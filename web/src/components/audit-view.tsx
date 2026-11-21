@@ -68,7 +68,23 @@ export function AuditView({ doc, fileUrl, mime }: { doc: DocDetail; fileUrl: str
                   disabled={pending}
                   onClick={() =>
                     start(async () => {
-                      const r = await markReviewed(doc.id);
+                      const stored = () => {
+                        try {
+                          return sessionStorage.getItem("uploadPasscode") ?? "";
+                        } catch {
+                          return "";
+                        }
+                      };
+                      let r = await markReviewed(doc.id, stored());
+                      if (r.code === "passcode_required") {
+                        const entered = window.prompt("Enter the demo passcode");
+                        if (entered) {
+                          try {
+                            sessionStorage.setItem("uploadPasscode", entered);
+                          } catch {}
+                          r = await markReviewed(doc.id, entered);
+                        }
+                      }
                       setError(r.ok ? "" : (r.message ?? "Couldn't mark this document reviewed."));
                     })
                   }

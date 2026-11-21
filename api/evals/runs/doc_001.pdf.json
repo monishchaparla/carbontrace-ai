@@ -1,0 +1,105 @@
+{
+ "seconds": 147.8,
+ "model": "gemini-3.6-flash",
+ "attempts": [
+  {
+   "model": "gemini-3.8-flash",
+   "ok": false,
+   "error": "ServerError"
+  },
+  {
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "seconds": 46.44
+  }
+ ],
+ "document": {
+  "doc_type": "fuel_receipt",
+  "supplier": "Neelgiri Petro Hub (fictional)",
+  "invoice_number": "FU-68233",
+  "invoice_date": "2026-05-28",
+  "period_start": null,
+  "period_end": null,
+  "currency": "INR",
+  "country": "IN",
+  "line_items": [
+   {
+    "description": "High speed diesel",
+    "quantity": "475.5",
+    "unit": "L",
+    "amount": "46203.17",
+    "category": "fuel",
+    "is_activity": true,
+    "fuel_or_material": "diesel",
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     256,
+     94,
+     270,
+     858
+    ],
+    "confidence": 0.98
+   },
+   {
+    "description": "CGST @ 9%",
+    "quantity": null,
+    "unit": null,
+    "amount": "4158.29",
+    "category": "other",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     281,
+     95,
+     296,
+     857
+    ],
+    "confidence": 0.99
+   },
+   {
+    "description": "SGST @ 9%",
+    "quantity": null,
+    "unit": null,
+    "amount": "4158.29",
+    "category": "other",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     307,
+     95,
+     322,
+     857
+    ],
+    "confidence": 0.99
+   }
+  ]
+ },
+ "flags": [],
+ "lines": [
+  {
+   "line_index": 0,
+   "factor_id": "desnz-2026:1_101_1012_8_1",
+   "method": "model",
+   "shortlist": [
+    "desnz-2026:1_101_1012_8_1",
+    "desnz-2026:11_101_1012_8_1",
+    "desnz-2026:1_101_1011_8_1"
+   ],
+   "kg_co2e": "1265.567025"
+  }
+ ]
+}

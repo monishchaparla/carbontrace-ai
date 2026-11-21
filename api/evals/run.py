@@ -21,7 +21,8 @@ from carbontrace.schema import LineItem
 from carbontrace.units import try_parse_unit
 
 HERE = Path(__file__).resolve().parent
-RUNS = HERE / "runs"
+BASE = HERE / sys.argv[sys.argv.index("--set") + 1] if "--set" in sys.argv else HERE  # held-out sets: evals/<set>/
+RUNS = BASE / "runs"
 TOL = Decimal("0.001")  # 0.1% relative tolerance on quantities
 
 
@@ -164,18 +165,18 @@ def score(gt: list[dict]) -> dict:
 
 
 def main() -> None:
-    gt = json.loads((HERE / "ground_truth.json").read_text(encoding="utf-8"))
+    gt = json.loads((BASE / "ground_truth.json").read_text(encoding="utf-8"))
     RUNS.mkdir(exist_ok=True)
     if "--score" not in sys.argv:
         for n, g in enumerate(gt, 1):
             cache = RUNS / f"{g['file']}.json"
             if cache.exists() and "error" not in json.loads(cache.read_text(encoding="utf-8")):
                 continue
-            out = process(HERE / "docs" / g["file"])
+            out = process(BASE / "docs" / g["file"])
             cache.write_text(json.dumps(out, indent=1), encoding="utf-8")
             print(f"[{n}/{len(gt)}] {g['file']} {out.get('model', 'ERROR')} {out['seconds']}s", flush=True)
     result = score(gt)
-    (HERE / "results.json").write_text(json.dumps(result, indent=1), encoding="utf-8")
+    (BASE / "results.json").write_text(json.dumps(result, indent=1), encoding="utf-8")
     print(json.dumps({k: v for k, v in result.items() if k != "per_doc"}, indent=1))
 
 

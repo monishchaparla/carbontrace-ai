@@ -1,0 +1,115 @@
+{
+ "seconds": 7.9,
+ "model": "gemini-3.1-flash-lite",
+ "attempts": [
+  {
+   "model": "gemini-3.6-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.5-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.1-flash-lite",
+   "ok": true,
+   "seconds": 2.97
+  }
+ ],
+ "document": {
+  "doc_type": "fuel_receipt",
+  "supplier": "Sagarkinara Petro Station",
+  "invoice_number": "FU-41897",
+  "invoice_date": "2026-02-25",
+  "period_start": null,
+  "period_end": null,
+  "currency": "INR",
+  "country": "IN",
+  "line_items": [
+   {
+    "description": "High speed diesel",
+    "quantity": "627.8",
+    "unit": "litres",
+    "amount": "57413.06",
+    "category": "fuel",
+    "is_activity": true,
+    "fuel_or_material": "diesel",
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     253,
+     295,
+     267,
+     415
+    ],
+    "confidence": 1.0
+   },
+   {
+    "description": "CGST @ 9%",
+    "quantity": null,
+    "unit": null,
+    "amount": "5167.18",
+    "category": "fuel",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     276,
+     295,
+     290,
+     375
+    ],
+    "confidence": 1.0
+   },
+   {
+    "description": "SGST @ 9%",
+    "quantity": null,
+    "unit": null,
+    "amount": "5167.18",
+    "category": "fuel",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     300,
+     295,
+     314,
+     375
+    ],
+    "confidence": 1.0
+   }
+  ]
+ },
+ "flags": [],
+ "lines": [
+  {
+   "line_index": 0,
+   "factor_id": "desnz-2026:1_101_1012_8_1",
+   "method": "model",
+   "shortlist": [
+    "desnz-2026:1_101_1012_8_1",
+    "desnz-2026:11_101_1012_8_1",
+    "desnz-2026:1_101_1011_8_1"
+   ],
+   "kg_co2e": "1670.921090"
+  }
+ ]
+}

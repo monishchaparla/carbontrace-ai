@@ -2,8 +2,12 @@
 
 import { revalidatePath } from "next/cache";
 import { apiFetch } from "@/lib/api";
+import { passcodeOk } from "@/lib/passcode";
 
-export async function markReviewed(id: string): Promise<{ ok: boolean; message?: string }> {
+export async function markReviewed(id: string, passcode = ""): Promise<{ ok: boolean; message?: string; code?: string }> {
+  if (!passcodeOk(passcode)) {
+    return { ok: false, message: "Marking documents reviewed needs the demo passcode.", code: "passcode_required" };
+  }
   try {
     const res = await apiFetch(`/documents/${encodeURIComponent(id)}/review`, {
       method: "POST",

@@ -1,0 +1,140 @@
+{
+ "seconds": 8.8,
+ "model": "gemini-3.1-flash-lite",
+ "attempts": [
+  {
+   "model": "gemini-3.6-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.5-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "ok": false,
+   "error": "ClientError 429"
+  },
+  {
+   "model": "gemini-3.1-flash-lite",
+   "ok": true,
+   "seconds": 6.22
+  }
+ ],
+ "document": {
+  "doc_type": "electricity_bill",
+  "supplier": "Narmada Urja Vitaran",
+  "invoice_number": "BL/2026/14916",
+  "invoice_date": "2026-03-28",
+  "period_start": "2026-03-01",
+  "period_end": "2026-03-31",
+  "currency": "INR",
+  "country": "IN",
+  "line_items": [
+   {
+    "description": "Energy consumed",
+    "quantity": "35400",
+    "unit": "MWh",
+    "amount": "299827.85",
+    "category": "electricity",
+    "is_activity": true,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     160,
+     100,
+     180,
+     900
+    ],
+    "confidence": 0.95
+   },
+   {
+    "description": "Fixed / demand charges (290 kVA)",
+    "quantity": "290",
+    "unit": "kVA",
+    "amount": "87231.06",
+    "category": "electricity",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     185,
+     100,
+     205,
+     900
+    ],
+    "confidence": 0.95
+   },
+   {
+    "description": "Electricity duty",
+    "quantity": null,
+    "unit": null,
+    "amount": "22487.09",
+    "category": "electricity",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     210,
+     100,
+     230,
+     900
+    ],
+    "confidence": 0.95
+   },
+   {
+    "description": "Fuel adjustment charge",
+    "quantity": "35400",
+    "unit": "MWh",
+    "amount": "14384.07",
+    "category": "electricity",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     235,
+     100,
+     255,
+     900
+    ],
+    "confidence": 0.95
+   }
+  ]
+ },
+ "flags": [
+  {
+   "code": "unit_suspect",
+   "message": "Unit reads MWh, but the price works out to \u20b90.01 per kWh. Check kWh vs MWh.",
+   "line_index": 0
+  }
+ ],
+ "lines": [
+  {
+   "line_index": 0,
+   "factor_id": "cea-v22:india-grid-fy2025-26",
+   "method": "rule",
+   "shortlist": [
+    "cea-v22:india-grid-fy2025-26"
+   ],
+   "kg_co2e": "23895000.000000"
+  }
+ ]
+}

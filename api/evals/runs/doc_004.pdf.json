@@ -1,0 +1,85 @@
+{
+ "seconds": 135.1,
+ "model": "gemini-3.6-flash",
+ "attempts": [
+  {
+   "model": "gemini-3.6-flash",
+   "ok": true,
+   "seconds": 50.08
+  }
+ ],
+ "document": {
+  "doc_type": "fuel_receipt",
+  "supplier": "Tarang Gas Agency (fictional)",
+  "invoice_number": "GS-49513",
+  "invoice_date": "2026-12-16",
+  "period_start": null,
+  "period_end": null,
+  "currency": "INR",
+  "country": "IN",
+  "line_items": [
+   {
+    "description": "Commercial LPG supply",
+    "quantity": "608",
+    "unit": "kg",
+    "amount": "65970.09",
+    "category": "fuel",
+    "is_activity": true,
+    "fuel_or_material": "LPG",
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     163,
+     94,
+     175,
+     859
+    ],
+    "confidence": 0.98
+   },
+   {
+    "description": "GST @ 5%",
+    "quantity": null,
+    "unit": null,
+    "amount": "3298.50",
+    "category": "other",
+    "is_activity": false,
+    "fuel_or_material": null,
+    "origin": null,
+    "destination": null,
+    "weight_tonnes": null,
+    "distance_km": null,
+    "page": 1,
+    "box_2d": [
+     186,
+     95,
+     198,
+     859
+    ],
+    "confidence": 0.98
+   }
+  ]
+ },
+ "flags": [
+  {
+   "code": "future_date",
+   "message": "Invoice date is in the future.",
+   "line_index": null
+  }
+ ],
+ "lines": [
+  {
+   "line_index": 0,
+   "factor_id": "desnz-2026:1_100_1003_15_1",
+   "method": "model",
+   "shortlist": [
+    "desnz-2026:1_100_1003_15_1",
+    "desnz-2026:11_100_1003_15_1",
+    "desnz-2026:20_507_5313_15_1"
+   ],
+   "kg_co2e": "1787.131458"
+  }
+ ]
+}

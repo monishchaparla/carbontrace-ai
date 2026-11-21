@@ -1,0 +1,8 @@
+# Runtime only (the factor builder and sample-invoice scripts also need openpyxl and reportlab; see pyproject.toml).
+pandas>=2.3
+pint>=0.24
+pydantic>=2.9
+fastapi>=0.115
+python-multipart>=0.0.20
+google-genai>=1.30
+python-dotenv>=1.0
